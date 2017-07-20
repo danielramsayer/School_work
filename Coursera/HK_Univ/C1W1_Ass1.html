@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<title>Dating Website</title>
+<head>
+<style>
+</style>
+</head>
+<body>
+    <form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+        <div>
+            <fieldset>
+                <legend>
+                    Your Face
+                </legend>
+                <label for="file">Your Image: </label> <input type="file" name="fileToUpload"><br>
+                <label for="preview">Image preview: </label>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>
+                    Your General Details
+                </legend>
+                <label for="name">Your Name: </label> <input type="text" placeholder="Your full name" required> <br>
+                <label for="gender">Gender: </label> <input type="radio" name="gender" value="male"> Male <input type="radio" name="gender" value="male">Female<br>
+                <label for="age">Age:  </label> <input type="text" placeholder="18" required> <br>
+                <label for="DOB">Date of Birth: </label> <input type="date" required> <br>
+                <label for="color">Favorite Colour: </label> <input type="color" required> <br>
+                <select name="cities"><label for="city">Which Country: </label>   
+                <option value="hk">Hong Kong</option> <option value="pdx">Portland, OR</option><option value="sea">Seattle, WA</option></select>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>
+                    Your Indicators
+                </legend>
+                <tab><label for="height">Height:</label> Short <input type="range" min ="0" max="50" step="5" value="25" id="height" name="height">Tall<br></tab>
+                <tab><label for="salary">Salary: </label> Poor <input type="range" min ="0" max="50" step="5" value="25" id="height" name="height">Rich<br></tab>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>
+                    Your Contact Information
+                </legend>
+                    <table>   
+                        <tr><th><label for="email">Email: </th></label><th><input type="text" required></th></tr>
+                        <tr><th><label for="mobile">Mobile: </label> <th><input type="text" required> </tr>
+                        <tr><th><label for="address">Address: </label> <th><input type="text" required> </tr>
+                    </table> 
+            </fieldset>
+            </table>
+        </div>
+    </form>
+    <input type="submit" value="Submit">
+</body>
+</html>
