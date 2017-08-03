@@ -15,7 +15,7 @@ function buttonPressed(numbButt) {
       current = current.toString().slice(0, -1);
       break;
     case "0":
-      if (current.length < 1 && current[0] !== "0") {
+      if ((current[0] !== '0') || (current[0] === '0' && current[1] === '.')) {
         current = current.concat("0");
       }
       break;
@@ -28,13 +28,44 @@ function buttonPressed(numbButt) {
     case "7":
     case "8":
     case "9":
-      if (current === '0') {
-        current = "";
-      }
       current = current.concat(numbButt);
       break;
+    case ".":
+      if (current.includes('.') === false) {
+        current = current.concat(numbButt);
+      }
+      break;
+    case "times":
+      old = old.concat(current, '*');
+      current = [].join(',');
+      console.log(old);
+      break;
+    case "divide":
+      old = old.concat(current, '/');
+      current = [].join(',');
+      console.log(old);
+      break;
+    case "minus":
+      old = old.concat(current, '-');
+      current = [].join(',');
+      console.log(old);
+      break;
+    case "plus":
+      old = old.concat(current, '+');
+      current = [].join(',');
+      console.log(old);
+      break;
+    case "equals":
+      if (old.includes('.') === false && current.includes('.') === false) {
+        old = old.concat(current);
+        console.log(toString(old));
+        //current = eval(old);
+      } else {
+        old = old.concat(current);
+        current = eval(old);
+      }
+      break;
     default:
-
   }
   var show = current.toString();
   firstShow.innerHTML = show;
