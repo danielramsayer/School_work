@@ -7,7 +7,7 @@ firstShow.innerHTML = 0;
 function buttonPressed(numbButt) {
   switch (numbButt) {
     case 'CE':
-      total = "0";
+      current = "0";
     case 'C':
       current = "0";
       break;
@@ -56,17 +56,16 @@ function buttonPressed(numbButt) {
       console.log(old);
       break;
     case "equals":
-      if (old.includes('.') === false && current.includes('.') === false) {
-        old = old.concat(current);
-        console.log(toString(old));
-        //current = eval(old);
-      } else {
-        old = old.concat(current);
-        current = eval(old);
-      }
-      break;
-    default:
-  }
-  var show = current.toString();
-  firstShow.innerHTML = show;
+      old = old.concat(current);
+      total = old.join(' ');
+      total = eval(total);
+      old = [];
+      current = [];
+      current = total.toString();
+      console.log(total);
+  break;
+  default:
+}
+var show = current.toString();
+firstShow.innerHTML = show;
 }
