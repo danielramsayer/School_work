@@ -1,5 +1,6 @@
 var current = [].join(',');
 var old = [];
+total = "";
 
 var firstShow = document.getElementById('total');
 firstShow.innerHTML = 0;
@@ -15,9 +16,15 @@ function buttonPressed(numbButt) {
       current = '0';
       break;
     case 'back':
+      if (total === parseFloat(current)) {
+        break;
+      }
       current = current.toString().slice(0, -1);
       break;
     case '0':
+      if (total === parseInt(current)) {
+        break;
+      }
       if (current[0] === '0' && current[1] === '.' || current[0] !== '0') {
         current = current.concat('0');
       }
@@ -31,9 +38,15 @@ function buttonPressed(numbButt) {
     case '7':
     case '8':
     case '9':
+      if (total === parseInt(current)) {
+        break;
+      }
       current = current.concat(numbButt).replace(/^0+/,'');
       break;
     case '.':
+      if (total === parseInt(current)) {
+        break;
+      }
       if (current.includes('.') === false) {
         current = current.concat(numbButt);
       }
