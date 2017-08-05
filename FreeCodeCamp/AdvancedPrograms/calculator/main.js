@@ -8,6 +8,7 @@ function buttonPressed(numbButt) {
   switch (numbButt) {
     case 'CE':
       current = "0";
+      break;
     case 'C':
       current = "0";
       break;
@@ -15,7 +16,7 @@ function buttonPressed(numbButt) {
       current = current.toString().slice(0, -1);
       break;
     case "0":
-      if ((current[0] !== '0') || (current[0] === '0' && current[1] === '.')) {
+      if (current[0] === '0' && current[1] === '.' || current[0] !== '0') {
         current = current.concat("0");
       }
       break;
@@ -29,6 +30,9 @@ function buttonPressed(numbButt) {
     case "8":
     case "9":
       current = current.concat(numbButt);
+      if (current[0] === '0' && current[1] !== '.') {
+        var shifted = current.shift();
+      }
       break;
     case ".":
       if (current.includes('.') === false) {
@@ -38,22 +42,26 @@ function buttonPressed(numbButt) {
     case "times":
       old = old.concat(current, '*');
       current = [].join(',');
-      console.log(old);
+      var show = current[-1].toString();
+      firstShow.innerHTML = show;
       break;
     case "divide":
       old = old.concat(current, '/');
       current = [].join(',');
-      console.log(old);
+      var show = current[-1].toString();
+      firstShow.innerHTML = show;
       break;
     case "minus":
       old = old.concat(current, '-');
       current = [].join(',');
-      console.log(old);
+      var show = current[-1].toString();
+      firstShow.innerHTML = show;
       break;
     case "plus":
       old = old.concat(current, '+');
       current = [].join(',');
-      console.log(old);
+      var show = current[-1].toString();
+      firstShow.innerHTML = show;
       break;
     case "equals":
       old = old.concat(current);
@@ -62,7 +70,6 @@ function buttonPressed(numbButt) {
       old = [];
       current = [];
       current = total.toString();
-      console.log(total);
   break;
   default:
 }
