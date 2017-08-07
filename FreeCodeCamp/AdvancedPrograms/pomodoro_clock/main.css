@@ -20,8 +20,12 @@ P {
   margin-top: 0px;
 }
 
-.inputs {
+div {
+  margin-top: 0px
+}
 
+.inputs {
+  margin-top: 0px;
   font-size: 25px;
   column-count: 2;
   -webkit-columns: 2; /* Chrome, Safari, Opera */
@@ -51,7 +55,7 @@ svg {
 }
 
 .circle_animation {
-  stroke-dasharray: 440; /* this value is the pixel circumference of the circle */
-  stroke-dashoffset: 440;
+  stroke-dasharray: 565.49; /* this value is the pixel circumference of the circle */
+  stroke-dashoffset: 565.49;
   transition: all 1s linear;
 }
