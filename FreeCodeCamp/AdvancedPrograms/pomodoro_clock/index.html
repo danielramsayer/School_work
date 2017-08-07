@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pomodoro Clock</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <P id="Title">Free Code Camp</P>
+  <div class="inputs">
+    <P>Break Length</P>
+    <div id="bminus" onclick="buttonPressed('bminus')"> - </div>
+    <div id="blength"></div>
+    <div id="bplus" onclick="buttonPressed('bplus')"> + </div>
+    <P>Session Length</P>
+    <div id="tminus" onclick="buttonPressed('tminus')"> - </div>
+    <div id="tlength"></div>
+    <div id="tplus" onclick="buttonPressed('tplus')"> + </div>
+  </div>
+  <div class="item html" id="clock">
+    <h2 onclick="clockStart()">0</h2>
+    <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+     <g>
+      <title>Layer 1</title>
+      <circle id="circle" class="circle_animation" r="70" cy="81" cx="81" stroke-width="3" stroke="rgb(131, 196, 217)" fill="none"/>
+     </g>
+    </svg>
+  </div>
+
+
+
+  <script src="main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+
+</html>
