@@ -1,13 +1,12 @@
 var time = 0;
+var b = 1;
+var t = 2;
 
 var bfirstShow = document.getElementById('blength');
-bfirstShow.innerHTML = 5;
+bfirstShow.innerHTML = b;
 
 var tfirstShow = document.getElementById('tlength');
-tfirstShow.innerHTML = 25;
-
-var b = 5;
-var t = 25;
+tfirstShow.innerHTML = t;
 
 function buttonPressed(input) {
   switch (input) {
@@ -25,14 +24,12 @@ function buttonPressed(input) {
       break;
     default:
   }
-  bshow = b;
-  bfirstShow.innerHTML = bshow;
+  bfirstShow.innerHTML = b;
 
-  tshow = t;
-  tfirstShow.innerHTML = tshow;
+  tfirstShow.innerHTML = t;
 }
 
-function checker (ba, ta) {
+function checker(ba, ta) {
   if (ta === 0) {
     if (ba === 0) {
       ta = t;
@@ -40,22 +37,20 @@ function checker (ba, ta) {
       return ba;
     }
     return ba;
-  }else {
+  } else {
     return ta;
   }
 }
 
-function clockStart(){
+function clockStart() {
   var initialOffset = '565.49';
   var i = 1;
-  var startTime = checker(bshow,tshow);
+  var timing = t;
+  var startTime = timing;
   time = 60 * startTime;
-
   var interval = setInterval(function() {
     $('.circle_animation').css('stroke-dashoffset', initialOffset - (i * (initialOffset / time)));
-
     $('h2').text(tellTime(i));
-
     if (i == time) {
       clearInterval(interval);
     }

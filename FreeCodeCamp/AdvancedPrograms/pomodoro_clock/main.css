@@ -1,20 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Condensed|Sedgwick+Ave');
 
 body {
-  background-color: rgb(0, 38, 74);
-  color: rgb(131, 196, 217);
-
+  background-color: black;
+  color: #319cf4;
+  font-family: 'Arial';
   text-align: center;
 }
 
 #Title {
   font-size: 75px;
   font-family: 'Sedgwick Ave', cursive;
-}
-
-#Session {
-  font-size: 50px;
-  font-family: 'Saira Condensed';
 }
 
 P {
@@ -55,4 +50,5 @@ svg {
   stroke-dasharray: 565.49; /* this value is the pixel circumference of the circle */
   stroke-dashoffset: 565.49;
   transition: all 1s linear;
+  text-shadow: 10px 10px 5px rgb(100, 188, 207);
 }
