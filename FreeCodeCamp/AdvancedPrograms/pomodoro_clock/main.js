@@ -31,6 +31,7 @@ function buttonPressed(input) {
 
 function clockStart() {
   var initialOffset = '565.49';
+  var startTime = Date.now();
   var i = 1;
   var state = "session";
   var time = 60 * session;
@@ -38,10 +39,11 @@ function clockStart() {
     clearInterval(interval);
   }
   interval = setInterval(function() {
+    i = (Date.now() - startTime) / 1000;
     $('.circle_animation').css('stroke-dashoffset', initialOffset - (i * (initialOffset / time)));
     $('h2').text(tellTime(i, time));
-    if (i == time) {
-      i = 0;
+    if (i >= time) {
+      startTime = Date.now();
       if (state === "session") {
         state = "breakType";
         time = 60 * breakType;
@@ -50,11 +52,10 @@ function clockStart() {
         time = 60 * session;
       }
     }
-    i++;
-  }, 1000);
+  }, 100);
 }
 
 function tellTime(seconds, time) {
   totalSeconds = (time - seconds);
-  return (Math.floor((totalSeconds / 60)) + ":" + (totalSeconds % 60));
+  return (Math.floor((totalSeconds / 60)) + ":" + ('0'+(Math.floor(totalSeconds % 60))).slice(-2));
 }
