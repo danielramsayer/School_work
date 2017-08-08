@@ -1,64 +1,60 @@
-var time = 0;
-var b = 1;
-var t = 2;
+var breakType = 1;
+var session = 2;
+var interval = null;
 
-var bfirstShow = document.getElementById('blength');
-bfirstShow.innerHTML = b;
+var breakfirstShow = document.getElementById('blength');
+breakfirstShow.innerHTML = breakType;
 
-var tfirstShow = document.getElementById('tlength');
-tfirstShow.innerHTML = t;
+var sessionfirstShow = document.getElementById('tlength');
+sessionfirstShow.innerHTML = session;
 
 function buttonPressed(input) {
   switch (input) {
     case 'bminus':
-      --b;
+      --breakType;
       break;
     case 'bplus':
-      ++b;
+      ++breakType;
       break;
     case 'tplus':
-      ++t;
+      ++session;
       break;
     case 'tminus':
-      --t;
+      --session;
       break;
     default:
   }
-  bfirstShow.innerHTML = b;
+  breakfirstShow.innerHTML = breakType;
 
-  tfirstShow.innerHTML = t;
-}
-
-function checker(ba, ta) {
-  if (ta === 0) {
-    if (ba === 0) {
-      ta = t;
-      ba = b;
-      return ba;
-    }
-    return ba;
-  } else {
-    return ta;
-  }
+  sessionfirstShow.innerHTML = session;
 }
 
 function clockStart() {
   var initialOffset = '565.49';
   var i = 1;
-  var timing = t;
-  var startTime = timing;
-  time = 60 * startTime;
-  var interval = setInterval(function() {
+  var state = "session";
+  var time = 60 * session;
+  if (interval) {
+    clearInterval(interval);
+  }
+  interval = setInterval(function() {
     $('.circle_animation').css('stroke-dashoffset', initialOffset - (i * (initialOffset / time)));
-    $('h2').text(tellTime(i));
+    $('h2').text(tellTime(i, time));
     if (i == time) {
-      clearInterval(interval);
+      i = 0;
+      if (state === "session") {
+        state = "breakType";
+        time = 60 * breakType;
+      } else {
+        state = "session";
+        time = 60 * session;
+      }
     }
     i++;
   }, 1000);
 }
 
-function tellTime(seconds) {
+function tellTime(seconds, time) {
   totalSeconds = (time - seconds);
   return (Math.floor((totalSeconds / 60)) + ":" + (totalSeconds % 60));
 }
