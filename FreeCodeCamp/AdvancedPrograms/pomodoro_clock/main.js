@@ -32,13 +32,24 @@ function buttonPressed(input) {
   tfirstShow.innerHTML = tshow;
 }
 
+function checker (ba, ta) {
+  if (ta === 0) {
+    if (ba === 0) {
+      ta = t;
+      ba = b;
+      return ba;
+    }
+    return ba;
+  }else {
+    return ta;
+  }
+}
+
 function clockStart(){
-  if (t > 0) {
   var initialOffset = '565.49';
   var i = 1;
-
-  var ttime = t;
-  time = 60 * ttime;
+  var startTime = checker(bshow,tshow);
+  time = 60 * startTime;
 
   var interval = setInterval(function() {
     $('.circle_animation').css('stroke-dashoffset', initialOffset - (i * (initialOffset / time)));
@@ -50,7 +61,6 @@ function clockStart(){
     }
     i++;
   }, 1000);
-  }
 }
 
 function tellTime(seconds) {

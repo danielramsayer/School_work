@@ -3,6 +3,7 @@
 body {
   background-color: rgb(0, 38, 74);
   color: rgb(131, 196, 217);
+
   text-align: center;
 }
 
@@ -20,12 +21,8 @@ P {
   margin-top: 0px;
 }
 
-div {
-  margin-top: 0px
-}
-
 .inputs {
-  margin-top: 0px;
+
   font-size: 25px;
   column-count: 2;
   -webkit-columns: 2; /* Chrome, Safari, Opera */
