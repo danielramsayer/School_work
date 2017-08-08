@@ -1,5 +1,5 @@
-var breakType = 1;
-var session = 2;
+var breakType = 5;
+var session = 25;
 var interval = null;
 
 var breakfirstShow = document.getElementById('blength');

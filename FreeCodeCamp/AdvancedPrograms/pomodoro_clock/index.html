@@ -9,26 +9,25 @@
   <title>Pomodoro Clock</title>
   <link rel="stylesheet" href="main.css">
 </head>
-
 <body>
-  <P id="Title">Free Code Camp</P>
+  <P id="Title">Free Code Camp
   <div class="inputs">
-    <P>Break Length</P>
+    <br>Break Length
     <div id="bminus" onclick="buttonPressed('bminus')"> - </div>
     <div id="blength"></div>
     <div id="bplus" onclick="buttonPressed('bplus')"> + </div>
-    <P>Session Length</P>
+    <br>Session Length
     <div id="tminus" onclick="buttonPressed('tminus')"> - </div>
     <div id="tlength"></div>
     <div id="tplus" onclick="buttonPressed('tplus')"> + </div>
   </div>
+  </P>
   <form>
-    <input type="button" value="Start" onclick="clockStart()">
-      <h2>0</h2>
+    <h2 onclick="clockStart()">0</h2>
       <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
        <g>
         <title>Layer 1</title>
-        <circle id="circle" class="circle_animation" r="90" cy="95" cx="95" stroke-width="5" stroke="rgb(131, 196, 217)" fill="none"/>
+        <circle id="circle" class="circle_animation" r="90" cy="95" cx="95" stroke-width="5" stroke="rgb(0, 240, 255)" fill="none"/>
        </g>
       </svg>
     </div>

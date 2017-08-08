@@ -17,7 +17,7 @@ P {
 }
 
 .inputs {
-
+  margin-top: 0px;
   font-size: 25px;
   column-count: 2;
   -webkit-columns: 2; /* Chrome, Safari, Opera */
