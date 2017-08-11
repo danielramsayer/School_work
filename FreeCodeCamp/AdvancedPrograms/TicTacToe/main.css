@@ -18,12 +18,13 @@ body {
   text-align: center;
   align-items: center;
   font-size: 20px;
-  background-color: #093601;
+  background-color: #353635;
   break-inside: avoid;
 }
 
 td {
   margin: auto;
+  font-size: 90px;
   width: 100px;
   height: 100px;
   border: 2px solid rgb(203, 203, 203);
