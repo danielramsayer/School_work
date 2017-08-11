@@ -3,13 +3,13 @@ h1 {
 }
 
 body {
-  background-color: #09612f;
-  color: rgb(162, 247, 181);
+  background-color: #636363;
+  color: rgb(245, 245, 245);
 }
 
 .square {
   border-radius: 5px;
-  border: 2px solid rgb(162, 247, 181);
+  border: 2px solid rgb(245, 245, 245);
   width: 400px;
   height: 400px;
   margin-left: auto;
@@ -26,5 +26,5 @@ td {
   margin: auto;
   width: 100px;
   height: 100px;
-  border: 2px solid rgb(162, 247, 181);
+  border: 2px solid rgb(203, 203, 203);
 }
