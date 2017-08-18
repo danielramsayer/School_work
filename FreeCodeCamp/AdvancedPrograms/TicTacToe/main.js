@@ -1,18 +1,8 @@
 var score1 = 0;
 var score2 = 0;
 var playerVariable = "X";
-var whosTurn;
+var computerVariable = "O";
 var turnCount = 0;
-var winning = [
-  [0, 1, 2],
-  [0, 3, 6],
-  [0, 4, 8],
-  [1, 4, 7],
-  [2, 4, 6],
-  [2, 5, 8],
-  [3, 4, 5],
-  [6, 7, 8]
-];
 var used = [];
 var pused = [];
 var cused = [];
@@ -36,7 +26,6 @@ function thoseClicked(clickedSquare) {
       alert("Already in use. Try another!");
     }
     turnCount++;
-    whosTurn = "Computer";
   } else {
     alert("This is a tie, no one wins.");
     reset();
@@ -44,29 +33,50 @@ function thoseClicked(clickedSquare) {
 }
 
 function aI() {
-  for (var move in aiTrack) {
-    if (!(used.includes(move))) {
-      used.push(move);
-      element = document.getElementById('a' + move);
-      element.innerHTML = computerVariable;
-    }
-  }
+  
+
 }
 
 
 function winCheck(array1) {
   array1 = array1.sort();
-  if (array1[0] === 0) {
-    if (array[1] === 1 && array[2] === 2) {
-      //|| (array[1] === 3 && array[2] === 6) || (array[1] === 4 && array[2] === 8)) {
-      alert("Winning move!");
-      if (pused[0] === 0) {
-        keepScore(player1);
-      } else {
-        keepScore(player2);
-      }
+  if (array1.includes(0)) {
+    if (array1.includes(1) && array1.includes(2)) {
+      won(0);
+    } else if (array1.includes(3) && array1.includes(6)){
+      won(0);
+    } else if (array1.includes(4) && array1.includes(8)){
+      won(0);
+    }
+  } else if (array1.includes(1)) {
+    if (array1.includes(4) && array1.includes(7)) {
+      won(1);
+    }
+  } else if (array1.includes(2)) {
+    if (array1.includes(4) && array1.includes(6)) {
+      won(2);
+    } else if (array1.includes(5) && array1.includes(8)){
+      won(2);
+    }
+  } else if (array1.includes(3)) {
+    if (array1.includes(4) && array1.includes(5)) {
+      won(3);
+    }
+  } else if (array1.includes(6)) {
+    if (array1.includes(7) && array1.includes(8)) {
+      won(6);
     }
   }
+}
+
+function won(checker) {
+  alert("Winning Move!");
+  if (pused.includes(checker)){
+    keepScore('player1');
+  } else {
+    keepScore('player2');
+  }
+  reset();
 }
 
 
@@ -86,4 +96,10 @@ function reset() {
     pused = [];
     cused = [];
   }
+
+var pnScores1 = document.getElementById('PnScores1');
+pnScores1.innerHTML = score1;
+
+var pnScores2 = document.getElementById('PnScores2');
+pnScores2.innerHTML = score2;
 }
