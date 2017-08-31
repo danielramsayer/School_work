@@ -1,0 +1,63 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<body>
+  <div id="game_board">
+    <div id="colors" class="colors">
+      <div id="green" onClick="PlayColor(this.id)"></div>
+      <div id="red" onClick="PlayColor(this.id)"></div>
+      <div id="yellow" onClick="PlayColor(this.id)"></div>
+      <div id="blue" onClick="PlayColor(this.id)"></div>
+    </div>
+    <div class="gameControls">
+      <center>
+      <h3>Simon®</h3>
+      <!-- Strict Mode Activated -->
+      <div id="buttons" class="row">
+        <div class="col s6">
+          <button id="start" class="z-depth-1"></button>
+        </div>
+        <!-- GamePlay Mode Activated -->
+        <div class="col s6">
+          <div class="switch">
+            <label>
+              <input type="checkbox" id="strict">
+              <span class="lever"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6 labels">
+          <p>START</p>
+        </div>
+        <div class="col s6 labels">
+          <p id="strict-label">STRICT</p>
+        </div>
+      </div>
+      <div class="count">
+        <h5 id="numCount">==</h5>
+      </center>
+      </div>
+    </div>
+  </div>
+  <div id="final-screen" class="hidden">
+    <div id="conclusionStatement"></div>
+    <br>
+    <a href="#" id="new-game">Play again?</a>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+<footer>
+  <p class="center">Created by <a href="https://github.com/schoenertraeumer">Daniel Ramsayer</a></p>
+</footer>
