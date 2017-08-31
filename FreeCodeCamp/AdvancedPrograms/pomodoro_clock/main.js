@@ -1,6 +1,8 @@
 var breakType = 5;
 var session = 25;
 var interval = null;
+var on;
+var ding = new Audio ('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
 
 var breakfirstShow = document.getElementById('blength');
 breakfirstShow.innerHTML = breakType;
@@ -11,8 +13,10 @@ sessionfirstShow.innerHTML = session;
 function buttonPressed(input) {
   switch (input) {
     case 'bminus':
-      --breakType;
-      break;
+      if (breakType > 1) {
+        --breakType;
+        break;
+      }
     case 'bplus':
       ++breakType;
       break;
@@ -20,8 +24,10 @@ function buttonPressed(input) {
       ++session;
       break;
     case 'tminus':
-      --session;
-      break;
+      if (session > 1) {
+        --session;
+        break;
+      }
     default:
   }
   breakfirstShow.innerHTML = breakType;
@@ -45,9 +51,13 @@ function clockStart() {
     if (i >= time) {
       startTime = Date.now();
       if (state === "session") {
+        ding.play();
+        $('#activity').attr('src', 'https://cdn4.iconfinder.com/data/icons/office-line/512/coffee-256.png');
         state = "breakType";
         time = 60 * breakType;
       } else {
+        ding.play();
+        $('#activity').attr('src', 'https://cdn4.iconfinder.com/data/icons/48-bubbles/48/29.Mac-512.png');
         state = "session";
         time = 60 * session;
       }
@@ -57,5 +67,5 @@ function clockStart() {
 
 function tellTime(seconds, time) {
   totalSeconds = (time - seconds);
-  return (Math.floor((totalSeconds / 60)) + ":" + ('0'+(Math.floor(totalSeconds % 60))).slice(-2));
+  return (Math.floor((totalSeconds / 60)) + ":" + ('0' + (Math.floor(totalSeconds % 60))).slice(-2));
 }

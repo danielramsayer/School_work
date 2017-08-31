@@ -29,7 +29,7 @@ function thoseClicked(clickedSquare) {
       alert("Already in use. Try another!");
     }
     turnCount++;
-    //aI();
+    aI();
   } else {
     alert("This is a tie, no one wins.");
     reset();
@@ -38,16 +38,25 @@ function thoseClicked(clickedSquare) {
 
 function aI() {
   whosTurn = "Computer";
-
+  if (pused.includes(0)) {
+    used.push(1);
+    cused.push(1);
+    element = document.getElementById(1);
+    element.innerHTML = computerVariable;
+    console.log(cused, element);
+    turnCount++;
+  }
 }
 
 
 function winCheck(array1) {
   if (
-    (array1.includes(0) && array1.includes(1) && array1.includes(2)) || (array1.includes(0) && array1.includes(3) && array1.includes(6)) ||
+    (array1.includes(0) && array1.includes(1) && array1.includes(2)) ||
+    (array1.includes(0) && array1.includes(3) && array1.includes(6)) ||
     (array1.includes(0) && array1.includes(4) && array1.includes(8)) ||
     (array1.includes(1) && array1.includes(4) && array1.includes(7)) ||
-    (array1.includes(2) && array1.includes(4) && array1.includes(6)) || (array1.includes(2) && array1.includes(5) && array1.includes(8)) ||
+    (array1.includes(2) && array1.includes(4) && array1.includes(6)) ||
+    (array1.includes(2) && array1.includes(5) && array1.includes(8)) ||
     (array1.includes(3) && array1.includes(4) && array1.includes(5)) ||
     (array1.includes(6) && array1.includes(7) && array1.includes(8))
   ) {

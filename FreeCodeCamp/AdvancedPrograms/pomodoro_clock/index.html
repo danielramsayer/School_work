@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,34 +8,41 @@
   <title>Pomodoro Clock</title>
   <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
   <P id="Title">Free Code Camp
-  <div class="inputs">
-    <br>Break Length
-    <div id="bminus" onclick="buttonPressed('bminus')"> - </div>
-    <div id="blength"></div>
-    <div id="bplus" onclick="buttonPressed('bplus')"> + </div>
-    <br>Session Length
-    <div id="tminus" onclick="buttonPressed('tminus')"> - </div>
-    <div id="tlength"></div>
-    <div id="tplus" onclick="buttonPressed('tplus')"> + </div>
-  </div>
-  </P>
-  <form>
-    <h2 onclick="clockStart()">0</h2>
-      <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <div id="surround">
+      <center>
+        <div class="inputs">
+          <br>Break Length
+          <div id="bminus" onclick="buttonPressed('bminus')"> - </div>
+          <div id="blength"></div>
+          <div id="bplus" onclick="buttonPressed('bplus')"> + </div>
+          <br>Session Length
+          <div id="tminus" onclick="buttonPressed('tminus')"> - </div>
+          <div id="tlength"></div>
+          <div id="tplus" onclick="buttonPressed('tplus')"> + </div>
+        </div>
+        <hr>
+        <img id="activity" src="https://cdn4.iconfinder.com/data/icons/48-bubbles/48/29.Mac-512.png">
+        <form>
+          <h2 onclick="clockStart()">START</h2>
+          <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
        <g>
         <title>Layer 1</title>
         <circle id="circle" class="circle_animation" r="90" cy="95" cx="95" stroke-width="5" stroke="rgb(0, 240, 255)" fill="none"/>
        </g>
       </svg>
     </div>
-  </form>
-
-
-
-  <script src="main.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </div>
+    </form>
+    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
 
 </html>
+
+
+<footer>
+  <p class="center">Created by <a href="https://github.com/schoenertraeumer">Daniel Ramsayer</a></p>
+</footer>
