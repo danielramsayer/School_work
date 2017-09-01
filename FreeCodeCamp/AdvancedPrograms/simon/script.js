@@ -94,7 +94,7 @@ function validMove(color) {
   if (game.pSeq[game.pSeq.length - 1] !== game.cSeq[game.pSeq.length - 1]) {
     sounds(color);
     if (game.strict === true) {
-      $("#conclusionStatement").append("You've lost this game.");
+      $("#conclusionStatement").text("You've lost this game.");
       $("#game_board").fadeOut("slow");
       $("#final-screen").fadeTo("slow", 1);
     } else {
