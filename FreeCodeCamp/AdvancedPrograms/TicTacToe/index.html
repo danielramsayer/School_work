@@ -1,46 +1,48 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tic Tac Toe</title>
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="HTML, CSS, JavaScript, jQuery">
+    <meta name="author" content="Daniel Ramsayer">
+    <link rel="stylesheet" href="pretty.css">
+    <meta name="Tic Tac Toe" content="AI optioned tic tac toe game">
+    <title>Tic Tac Toe Game</title>
 </head>
-
 <body>
-  <h1>Tic Tac Toe</h1>
-  <div class="square">
-    <table id="grid" align="center">
-      <tr>
-        <td class = "squared" id="a0" onclick="thoseClicked('a0')"></td>
-        <td class = "squared" id="a1" onclick="thoseClicked('a1')"></td>
-        <td class = "squared" id="a2" onclick="thoseClicked('a2')"></td>
-      </tr>
-      <tr>
-        <td class = "squared" id="a3" onclick="thoseClicked('a3')"></td>
-        <td class = "squared" id="a4" onclick="thoseClicked('a4')"></td>
-        <td class = "squared" id="a5" onclick="thoseClicked('a5')"></td>
-      </tr>
-      <tr>
-        <td class = "squared" id="a6" onclick="thoseClicked('a6')"></td>
-        <td class = "squared" id="a7" onclick="thoseClicked('a7')"></td>
-        <td class = "squared" id="a8" onclick="thoseClicked('a8')"></td>
-      </tr>
-    </table>
-    <p> Player1 <span id="PnScores1">i</span> | Player2 <span id="PnScores2">t</span>
-  </div>
-  </div>
-  </div>
+    <header id="tehGame">
+        <h1>Tic Tac Toe</h1>
+        <div class="game-block">
+            <div class="row-block">
+                <section class="row">
+                    <div class="square" data-i=0 data-j=0></div>
+                    <div class="square" data-i=0 data-j=1></div>
+                    <div class="square" data-i=0 data-j=2></div>
+                </section>
+                <section class="row">
+                    <div class="square" data-i=1 data-j=0></div>
+                    <div class="square" data-i=1 data-j=1></div>
+                    <div class="square" data-i=1 data-j=2></div>
+                </section>
+                <section class="row">
+                    <div class="square" data-i=2 data-j=0></div>
+                    <div class="square" data-i=2 data-j=1></div>
+                    <div class="square" data-i=2 data-j=2></div>
+                </section>
+            </div>
+            <p>Player1 <span id="PnScores1">i</span> | Player2 <span id="PnScores2">t</span>
+        </div>
+    </header>
+<!-- library tethers -->
+<script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="ttt.js"></script>
 
-  <script src="main.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </body>
-
-</html>
-
 
 <footer>
   <p class="center">Created by <a href="https://github.com/schoenertraeumer">Daniel Ramsayer</a></p>
 </footer>
+
+</html>

@@ -1,31 +1,64 @@
-h1 {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
 
 body {
-  background-color: #636363;
-  color: rgb(245, 245, 245);
-}
-
-.square {
-  border-radius: 5px;
-  border: 2px solid rgb(245, 245, 245);
-  width: 400px;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
   text-align: center;
-  align-items: center;
+  font-family: 'Lobster Two', cursive;
   font-size: 18px;
-  background-color: #353635;
-  break-inside: avoid;
+  color: rgb(232, 101, 59);
+  background-color: rgb(25, 28, 65);
 }
 
-td {
-  margin: auto;
-  font-size: 90px;
-  width: 100px;
-  height: 100px;
-  border: 2px solid rgb(203, 203, 203);
+h1 {
+  font-size: 60px;
+}
+
+a {
+  color: rgb(255, 169, 99);
+}
+
+#tehGame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.game-block {
+
+  color: rgb(25, 28, 65);
+  text-align: center;
+  background: rgb(232, 101, 59);
+  border-radius: 10px;
+  width: 380px;
+  margin: 20px;
+}
+
+.row-block {
+  padding-top: 20px;
+}
+
+.row {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row .square {
+  background-color: rgb(255, 255, 255);
+  font-family: monospace;
+  color: rgb(232, 101, 59);
+  font-size: 45px;
+  text-align: center;
+  width: 110px;
+  height: 110px;
+  line-height: 110px;
+  margin: 2px;
+}
+
+.square:hover {
+  opacity: 0.95;
+  box-shadow: inset 0 10px 20px rgba(0,0,0,0.25), inset 0 5px 5px rgba(0,0,0,0.25);
 }
