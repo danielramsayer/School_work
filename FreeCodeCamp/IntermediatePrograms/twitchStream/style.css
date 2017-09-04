@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Inknut+Antiqua');
+
+body {
+  font-family: Inknut Antiqua;
+  background-color: rgb(153, 109, 200);
+  color: white;
+  background-image: url( http://pre11.deviantart.net/b72b/th/pre/f/2016/063/a/6/logo_by_maxigamer-d9tx6iz.png)
+}
+
+footer {
+  margin-top: 20px;
+  align-text: center;
+}
+
+.spacer {
+  padding: 4%;
+  }
+
+#user {
+  transform: translateY(-4%);
+}
+
+.block {
+  -webkit-columns: 3;
+  background-color: white;
+  opacity: .85;
+  color: black;
+  padding-top: 25px;
+  padding-left: 75px;
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 15px;
+  font-size: 12px;
+  padding-bottom: 1%;
+  }
+
+.tagging {
+    color: #390080;
+}
