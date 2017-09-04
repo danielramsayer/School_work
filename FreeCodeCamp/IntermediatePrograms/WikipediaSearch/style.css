@@ -1,0 +1,47 @@
+body {
+  font-family: Tahoma;
+  background-color: #000033;
+  color: white;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Wikipedia-logo-v2-en.svg/2000px-Wikipedia-logo-v2-en.svg.png)
+}
+
+a {
+  text-decoration: none;
+  color: rgb(60, 127, 215);
+  font-size: 18px;
+}
+
+.block {
+  font-size: 12px;
+  background-color: white;
+  opacity: .85;
+  color: black;
+  padding: 10px;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 15px;
+  font-size: 10px;
+  padding-bottom: 1%;
+}
+
+.spacer {
+  padding: 4%;
+}
+
+input[class=form-control] {
+  width: 250px;
+  box-sizing: border-box;
+  border: 2px solid dark gray;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-repeat: no-repeat;
+  padding: 10px 15px 10px 15px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=form-control]:focus {
+  width: 10%;
+}
