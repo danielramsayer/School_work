@@ -1,0 +1,45 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-family: 'Lobster', Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+.flex-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  color: rgb(1, 50, 89);
+  font-size: 18px;
+  box-shadow: 15px 10px 25px #001433;
+}
+
+body {
+  background-color: #008fb3;
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s;
+}
+
+a {
+  color: black;
+}
