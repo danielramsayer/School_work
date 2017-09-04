@@ -25,7 +25,7 @@ a {
 }
 
 .game-block {
-
+  padding-top: 30px;
   color: rgb(25, 28, 65);
   text-align: center;
   background: rgb(232, 101, 59);
@@ -34,9 +34,12 @@ a {
   margin: 20px;
 }
 
-.row-block {
-  padding-top: 20px;
+.switch {
+  padding-bottom: 20px;
+  font-size: 40px;
+  transform: translateY(-20%);
 }
+
 
 .row {
   color: rgb(255, 255, 255);
@@ -44,6 +47,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .row .square {
@@ -56,6 +61,10 @@ a {
   height: 110px;
   line-height: 110px;
   margin: 2px;
+}
+
+.square {
+    transform: translateY(-15%);
 }
 
 .square:hover {

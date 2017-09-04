@@ -1,8 +1,12 @@
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="HTML, CSS, JavaScript, jQuery">
+  <meta name="author" content="Daniel Ramsayer">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <meta name="simon says" content="Simon Says Clone with 20 layers of complexity.">
 </head>
 
 
@@ -17,12 +21,10 @@
     <div class="gameControls">
       <center>
       <h3>Simon®</h3>
-      <!-- Strict Mode Activated -->
       <div id="buttons" class="row">
         <div class="col s6">
           <button id="start" class="z-depth-1"></button>
         </div>
-        <!-- GamePlay Mode Activated -->
         <div class="col s6">
           <div class="switch">
             <label>
@@ -37,7 +39,7 @@
           <p>START</p>
         </div>
         <div class="col s6 labels">
-          <p id="strict-label">STRICT</p>
+          <p id="strictLabel">STRICT</p>
         </div>
       </div>
       <div class="count">
@@ -46,11 +48,7 @@
       </div>
     </div>
   </div>
-  <div id="final-screen" class="hidden">
-    <div id="conclusionStatement"></div>
-    <br>
-    <a href="#" id="new-game">Play again?</a>
-  </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.1.0.min.js"</script>

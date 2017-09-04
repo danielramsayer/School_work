@@ -1,9 +1,9 @@
 var game = {
+  strict: false,
   count: 0,
   cSeq: [],
   pSeq: [],
   colors: ["#green", "#red", "#yellow", "#blue"],
-  strict: false,
   sound: {
     green: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
     red: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
@@ -12,9 +12,7 @@ var game = {
   },
 };
 
-
-// Attach sounds and visual animation to each pad press
-function sounds(color) {
+function soundToPlay(color) {
   switch (color) {
     case "#green":
       game.sound.green.play();
@@ -31,11 +29,11 @@ function sounds(color) {
   }
 }
 
-function animation(color) {
-  $(color).addClass("animate");
-  sounds(color);
+function darken(color) {
+  $(color).addClass("darkencss");
+  soundToPlay(color);
   setTimeout(function() {
-    $(color).removeClass("animate");
+    $(color).removeClass("darkencss");
   }, 500);
 }
 
@@ -51,16 +49,11 @@ $("#start").click(function() {
   checkStrict();
   resetGame();
   $("#numCount").html("==");
-  colorGen();
+  sequenceGen();
 });
 
-function resetGame() {
-  game.cSeq = [];
-  game.pSeq = [];
-  game.count = 0;
-}
 
-function colorGen() {
+function sequenceGen() {
   game.count++;
   if (game.count < 10) {
     $("#numCount").html("0" + game.count);
@@ -74,7 +67,7 @@ function colorGen() {
 function playSeq() {
   var i = 0;
   var seq = setInterval(function() {
-    animation(game.cSeq[i]);
+    darken(game.cSeq[i]);
     i++;
     if (i >= game.cSeq.length) {
       clearInterval(seq);
@@ -92,11 +85,10 @@ function PlayColor(id) {
 
 function validMove(color) {
   if (game.pSeq[game.pSeq.length - 1] !== game.cSeq[game.pSeq.length - 1]) {
-    sounds(color);
+    soundToPlay(color);
     if (game.strict === true) {
-      $("#conclusionStatement").text("You've lost this game.");
-      $("#game_board").fadeOut("slow");
-      $("#final-screen").fadeTo("slow", 1);
+      alert("You've lost! Better luck next time.");
+      resetGame();
     } else {
       setTimeout(function() {
         alert("That wasn't correct. Try again!");
@@ -106,27 +98,24 @@ function validMove(color) {
       }, 600);
     }
   } else {
-    sounds(color);
+    soundToPlay(color);
     var checker = game.pSeq.length === game.cSeq.length;
     if (checker) {
       if (game.count === 2) {
-        $("#conclusionStatement").text("Winner! Congratulations!");
-        $("#game_board").fadeOut("slow");
-        $("#final-screen").fadeTo("slow", 1);
+        alert("Congratulations! You've made it to the end!");
+        resetGame();
       } else {
         setTimeout(function() {
-          colorGen();
-        }, 850);
+          sequenceGen();
+        }, 600);
       }
     }
   }
 }
 
-$("#new-game").click(function() {
-  $("#final-screen").fadeOut("slow");
-  $("#game_board").fadeTo("slow", 1);
-  $("#strict").prop("checked", false);
-  conclusionStatement = "";
-  resetGame();
+function resetGame() {
+  game.cSeq = [];
+  game.pSeq = [];
+  game.count = 0;
   $("#numCount").html("==");
-});
+}

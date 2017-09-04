@@ -1,7 +1,5 @@
 var score1 = 0;
 var score2 = 0;
-var playerVariable = 'X';
-var computerVariable = 'O';
 
 var pnScores1 = document.getElementById('PnScores1');
 pnScores1.innerHTML = score1;
@@ -9,11 +7,15 @@ var pnScores2 = document.getElementById('PnScores2');
 pnScores2.innerHTML = score2;
 
 $(document).ready(function() {
-  var xORo = confirm("Press 'OK' for X! Press 'Cancel' for O!");
-
-  if (xORo === false) {
-    computerVariable = 'X';
-    playerVariable = 'O';
+  function checkVar() {
+      if($("#strict").is(":checked")) {
+        playerVariable = "O";
+        computerVariable = "X";
+      } else {
+        playerVariable = 'X';
+        computerVariable = 'O';
+      }
+    }
   }
 
   var board = [
@@ -22,13 +24,10 @@ $(document).ready(function() {
     [" ", " ", " "]
   ];
 
-  $('.marker-select').click(function () {
-    while (!board.includes("O") || !board.includes("X")) {
-
-    }
-  });
-
   $('.square').click(function() {
+    checkVar();
+    console.log(checkVar);
+    count += 1;
     var stateOfGame = winCheck(board);
     if (stateOfGame || stateOfGame === null) {
       return;
@@ -159,7 +158,6 @@ $(document).ready(function() {
   }
 
   function reset () {
-
     for (var i = 0; i < 3; i++) {
       for (var j = 0; j < 3; j++) {
         board[i][j] = " ";
