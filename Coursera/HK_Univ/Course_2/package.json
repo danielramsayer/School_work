@@ -1,0 +1,17 @@
+{
+  "name": "ex1",
+  "version": "1.0.0",
+  "description": "testing this out",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/schoenertraeumer/Mytest",
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
+}

@@ -1,11 +1,16 @@
-@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand|Pacifico|Averia+Serif+Libre');
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand|Pacifico|Averia+Serif+Libre|Boogaloo');
+
+.container {
+  font-family: 'Boogaloo', cursive;
+  color: rgb(235, 235, 235);
+  font-size: 32px;
+}
+
 .banner1 {
   background-image: url("images/HeroTV.png");
   background-repeat: no-repeat;
   background-position: center top;
-  height: 100%;
-  border: 3px;
-  border-color: rgb(224, 114, 0);
+  height: 65%;
 }
 
 .bannerText1 {
@@ -180,12 +185,19 @@ header {
   cursor: pointer;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 1010px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 756px) {
   .banner1 {
     background-image: url("images/HeroTV.png");
     background-repeat: no-repeat;
     background-position: center top;
-    height: 70%;
+    height: 55%;
   }
   .bannerText1 {
     text-align: center;
@@ -264,7 +276,7 @@ header {
     background-image: url("images/HeroTV.png");
     background-repeat: no-repeat;
     background-position: center top;
-    height: 60%;
+    height: 50%;
   }
   .bannerText1 {
     text-align: center;
