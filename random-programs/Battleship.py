@@ -1,4 +1,4 @@
-#Welcome to BattleShip! This game is a simple one player battleship where the player pits their wits against the computer.
+#Welcome to BattleShip! Simple one player battleship game guessing 1 of 25 possibilities with 3 options.
 
 from random import randint
 ocean = []
@@ -21,12 +21,12 @@ def random_col(ocean):
 battleship_row = random_row(ocean)
 battleship_col = random_col(ocean)
 
-# Everything from here on should go in your for loop!
-# Be sure to indent four spaces!
 for turn in range(4):
+    print battleship_row
+    print battleship_col
     guess_row = int(raw_input("Which row do you think the battleship is in? Please select 0-4:"))
     guess_col = int(raw_input("Which column do you think the battleship is in? Please select 0-4:"))
-    
+
     if guess_row == battleship_row and guess_col == battleship_col:
         print "Congratulations! You sank my battleship!"
         break
@@ -41,6 +41,6 @@ for turn in range(4):
             else:
                 print "You missed my battleship!"
                 ocean[guess_row][guess_col] = "X"
-        
+
         print_board(ocean)
     print "Turn", turn + 1
