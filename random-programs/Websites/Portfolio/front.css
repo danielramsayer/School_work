@@ -1,10 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand|Pacifico');
-
-body {
-  background-color: rgb(110, 110, 110);
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand|Pacifico|Averia+Serif+Libre');
+.banner1 {
   background-image: url("images/HeroTV.png");
   background-repeat: no-repeat;
   background-position: center top;
+  height: 100%;
+  border: 3px;
+  border-color: rgb(224, 114, 0);
+}
+
+.bannerText1 {
+  text-align: center;
+  font-size: 80px;
+  color: rgb(235, 235, 235);
+  text-shadow: 2px 2px #3b3b3b;
+  font-family: 'Pacifico', cursive;
+}
+
+.bannerText2 {
+  font-family: 'Just Another Hand', cursive;
+  font-size: 60px;
+  color: rgb(235, 235, 235);
+  text-shadow: 3px 4px #3b3b3b;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(93, 0, 48);
 }
 
 header {
@@ -60,7 +81,6 @@ header {
 .btnPressed a:visited {
   color: rgb(62, 62, 62);
   text-decoration: none;
-
   background-color: #ffffff;
   padding: 2px 3px 2px 5px;
   -moz-border-radius: 3px;
@@ -70,7 +90,6 @@ header {
 .btnPressed a:hover {
   color: rgb(62, 62, 62);
   text-decoration: none;
-
   background-color: #ffffff;
   padding: 2px 3px 2px 5px;
   -moz-border-radius: 3px;
@@ -80,7 +99,6 @@ header {
 .btnPressed a:pressed {
   color: rgb(62, 62, 62);
   text-decoration: none;
-
   background-color: #ffffff;
   padding: 2px 3px 2px 5px;
   -moz-border-radius: 3px;
@@ -90,7 +108,6 @@ header {
 .btnPressed a:active {
   color: rgb(62, 62, 62);
   text-decoration: none;
-
   background-color: #ffffff;
   padding: 2px 3px 2px 5px;
   -moz-border-radius: 3px;
@@ -102,7 +119,7 @@ header {
 }
 
 #top-menu {
-  font-family: 'Just Another Hand', cursive;
+  font-family: 'Averia Serif Libre', cursive;
   z-index: 1;
   left: 0;
   right: 0;
@@ -132,9 +149,7 @@ header {
   color: rgb(62, 62, 62);
   text-decoration: none;
   background-color: #ffffff;
-  padding: 5px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  padding: 2px 3px 2px 3px;
 }
 
 #top-menu li.active a {
@@ -153,28 +168,39 @@ header {
 .socialMedia {
   width: 100%;
   text-align: right;
-  padding-right: 5px;
-  padding-top: 3px;
+  padding-top: 5px;
 }
 
 .socialMedia a:hover {
   background-color: #ffffff;
   transition: .5s ease-out;
   align-items: center;
-  padding: 30px 3px 3px 3px;
+  padding: 30px 3px 0px 5px;
   border-radius: 3px;
   cursor: pointer;
 }
 
-.banner1 {
-  color: rgb(235, 235, 235)
-  font-family: 'Pacifico', cursive;
-  font-size: 60px;
-  text-align: center;
-
-}
-
 @media screen and (max-width: 750px) {
+  .banner1 {
+    background-image: url("images/HeroTV.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 70%;
+  }
+  .bannerText1 {
+    text-align: center;
+    font-size: 60px;
+    color: rgb(235, 235, 235);
+    text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Pacifico', cursive;
+  }
+  .bannerText2 {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 40px;
+    color: rgb(235, 235, 235);
+    text-shadow: 3px 4px #3b3b3b;
+    text-align: center;
+  }
   h2 {
     font-size: 66px;
     line-height: 80px;
@@ -207,7 +233,6 @@ header {
     font-size: 24px;
     line-height: 14px;
     text-transform: uppercase;
-
     color: #FFFFFF;
     letter-spacing: 3px;
     padding: 18px 20px 0px 5px;
@@ -221,7 +246,6 @@ header {
     font-size: 14px;
     line-height: 12px;
     text-align: center;
-
     padding: 15px 0px 15px 0px;
     color: #ffffff;
   }
@@ -233,3 +257,27 @@ header {
     margin: 10px 3% 10px 3%;
     border-bottom: 1px solid #C5D0C7;
   }
+}
+
+@media screen and (max-width: 500px) {
+  .banner1 {
+    background-image: url("images/HeroTV.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    height: 60%;
+  }
+  .bannerText1 {
+    text-align: center;
+    font-size: 50px;
+    color: rgb(235, 235, 235);
+    text-shadow: 2px 2px #3b3b3b;
+    font-family: 'Pacifico', cursive;
+  }
+  .bannerText2 {
+    font-family: 'Just Another Hand', cursive;
+    font-size: 35px;
+    color: rgb(235, 235, 235);
+    text-shadow: 3px 4px #3b3b3b;
+    text-align: center;
+  }
+}
