@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css?family=Just+Another+Hand|Pacifico');
+
+body {
+  background-color: rgb(110, 110, 110);
+  background-image: url("images/HeroTV.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+header {
+  position: fixed;
+  transition: top 0.2s ease-out;
+  background: -webkit-linear-gradient(rgb(62, 62, 62), #13425d);
+  background: -o-linear-gradient(rgb(62, 62, 62), #13425d);
+  background: -moz-linear-gradient(rgb(62, 62, 62), #13425d);
+  background: linear-gradient(rgb(62, 62, 62), #13425d);
+}
+
+.nav-up {
+  top: -70px;
+}
+
+.navbar1 a:link, a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.navbar1 a:hover {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.navbar1 a:pressed {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.navbar1 a:active {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.btnPressed a:link {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.btnPressed a:visited {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.btnPressed a:hover {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.btnPressed a:pressed {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.btnPressed a:active {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.navWrapper {
+  padding: 0px 15px 0px 15px;
+}
+
+#top-menu {
+  font-family: 'Just Another Hand', cursive;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+#top-menu li {
+  float: left;
+}
+
+#top-menu a {
+  display: block;
+  margin: 8px 8px 0px 18px;
+  text-align: center;
+  -webkit-transition: .5s all ease-out;
+  -moz-transition: .5s all ease-out;
+  transition: .5s all ease-out;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0px 0px 0px 0px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 25px;
+}
+
+#top-menu a:hover {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#top-menu li.active a {
+  color: rgb(62, 62, 62);
+  text-decoration: none;
+  background-color: #ffffff;
+  padding: 2px 3px 2px 5px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.navbar2 {
+  display: none;
+}
+
+.socialMedia {
+  width: 100%;
+  text-align: right;
+  padding-right: 5px;
+  padding-top: 3px;
+}
+
+.socialMedia a:hover {
+  background-color: #ffffff;
+  transition: .5s ease-out;
+  align-items: center;
+  padding: 30px 3px 3px 3px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.banner1 {
+  color: rgb(235, 235, 235)
+  font-family: 'Pacifico', cursive;
+  font-size: 60px;
+  text-align: center;
+
+}
+
+@media screen and (max-width: 750px) {
+  h2 {
+    font-size: 66px;
+    line-height: 80px;
+    margin-bottom: 10px;
+  }
+  /* Navbar */
+  header {
+    height: 50px;
+    background: -webkit-linear-gradient(rgb(62, 62, 62), rgb(62, 62, 62));
+    background: -o-linear-gradient(rgb(62, 62, 62), rgb(62, 62, 62));
+    background: -moz-linear-gradient(rgb(62, 62, 62), rgb(62, 62, 62));
+    background: linear-gradient(rgb(62, 62, 62), rgb(62, 62, 62));
+  }
+  .navbar1 {
+    display: none;
+  }
+  .navbar2 {
+    display: block;
+    width: 30%;
+    float: left;
+  }
+  .accordionButton {
+    text-align: left;
+    width: 100%;
+    height: 32px;
+    float: left;
+    _float: none;
+    /* Float works in all browsers but IE6 */
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 14px;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    padding: 18px 20px 0px 5px;
+  }
+  .accordionContent {
+    width: 100%;
+    float: left;
+    _float: none;
+    /* Float works in all browsers but IE6 */
+    background: rgb(62, 62, 62);
+    font-size: 14px;
+    line-height: 12px;
+    text-align: center;
+
+    padding: 15px 0px 15px 0px;
+    color: #ffffff;
+  }
+  .accordionContent a {
+    color: #ffffff;
+  }
+  .divLine {
+    width: 94%;
+    margin: 10px 3% 10px 3%;
+    border-bottom: 1px solid #C5D0C7;
+  }
