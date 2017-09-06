@@ -14,6 +14,10 @@ While the guess is incorrect, my code checks that the entry is within the array 
 Here is the [Battleship](Battleship.py).
 
 #### The Result
+
 I was able to make this simple version work to the result of having a functional game that gives a visual representation of the battleship, updates used places, and is able to do some error checking. I would like to in the future give this a better gui interface and catch more use case scenarios so I will be refactoring it in the future.
+
+![alt text](https://github.com/danielramsayer/School_work/blob/master/random-programs/Websites/Portfolio/Battleship/g1.png "game image")
+
 
 [Return to portfolio](https://github.com/danielramsayer/Portfolio)
