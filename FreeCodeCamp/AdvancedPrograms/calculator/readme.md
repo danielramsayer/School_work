@@ -19,7 +19,7 @@ Here is a CodePen functional version of [the calculator](https://codepen.io/Dani
 
 My calculator is a success. It's rather plain, but I felt that for a simple calculator that this was alright.
 
-![alt text](https://github.com/danielramsayer/School_work/blob/master/random-programs/Websites/Portfolio/Battleship/g1.png "calculator image")
+![alt text](https://github.com/danielramsayer/School_work/blob/master/FreeCodeCamp/AdvancedPrograms/calculator/g1.png "calculator image")
 
 
 [Return to portfolio](https://github.com/danielramsayer/Portfolio)
