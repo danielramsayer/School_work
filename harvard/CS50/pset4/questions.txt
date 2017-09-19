@@ -1,0 +1,73 @@
+0.  How many different colors does each format support?
+       *GIF - 8 bits, 256 colors
+       *PNG - 24 bits, 256T colors
+       *JPEG - 24 bits, 16.7M colors
+       *BITMAP - 32 bits, 16M Colors
+1.  Which of the formats supports animation?
+       *GIF's can store animation.
+        
+2.  What’s the difference between lossy and lossless compression?
+       *A Lossy compressed image forsakes some details in order to reduce digital 
+        size, generally enabling some variety of image degredation in the process.
+       *A lossless compression algorithm discards no information. It looks for 
+        more efficient ways to represent an image, while making no compromises 
+        in accuracy.
+3.  Which of these formats is lossy-compressed?
+       *PNG is a lossless storage format - it looks for patterns in the image that
+        can be compressed but is reversable, so the image can be recovered exactly.
+       *GIF is a lossy and lossless storage format - below 256 colors it's lossless
+        but over is lossy, replacing colors and applying algorythms to reduce image size.
+       *JPEG are lossy compressed.
+       *Bitmap is not compressed.
+            Source: http://stackoverflow.com/questions/419584/what-is-the-difference-between-jpg-jpeg-png-bmp-gif-tiff-i
+                    http://users.wfu.edu/matthews/misc/graphics/formats/formats.html
+4.  What happens, technically speaking, when a file is deleted on a FAT file system?
+       *A FAT system first modifies the first character in the files directory 
+       entry to signal that the file has been actively deleted and the directoris' 
+       entry can be recycled. It then moves the FAT clusters to the hd's list of 
+       free sectors, not acitvely deleting.
+5.  What can someone like you do to ensure (with high probability) that files you 
+    delete cannot be recovered?
+       *They can delete the files and then overwrite the files with either NULLs or 
+        radnomly generated numbers. 
+6.  What’s stdint.h?
+       *This is a library who's job is to declare sets of integer
+        types specified widths and defines corresponding sets of macros.
+        It also defines macros that specify limits of integer types corresponding 
+        to types defined in other standard headers.
+7.  What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+       *The use of unsigned integers makes the first bit unisgned but grants the 
+        number of bits listed. All uint are positive (0 - n). These are setting the 
+        values for the types called. This gives the implication of how you are going 
+        to use it.
+8.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+       *Byte - 8 Unisgned bits/1 byte
+       *DWORD - 32 unisgned bits/4 bytes
+       *LONG - 32 signed bits./4 bytes
+       *WORD - 16 unsigned bits./2 bytes
+9.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP 
+    file be? (Leading bytes used to identify file formats (with high probability) 
+    are generally called "magic numbers.)"
+       *In Hexadecimal the first 2 bytes are: 42 4d
+10. What's the difference between bfSize and biSize?
+       *bfSize - This is the size in bytes of the bitmap
+       *biSize - This is the size of the structure of the bitmap in bytes.
+11. What does it mean if biHeight is negative? 
+       *This means that the top down DIB, and begins in the top left corner. If it's 
+        a top down DIB it can't be compressed, biCompression and must be BI_RGB or BI_BITFIELDS.
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per 
+    pixel)?
+       *The biBitCount member of the BITMAPINFOHEADER structure determines the number of 
+        bits that define each pixel and the maximum number of colors in the bitmap.
+13. Why might fopen return NULL in copy.c:37?
+       *Typically this only happens if the user doesn't have the correct permissions
+        or if there is a memory/disc space issue.
+14. Why is the third argument to fread always 1 in our code?
+       *We're reading the information 1 piece at a time - thus the 1 at a time.
+15. What value does copy.c:70 assign padding if bi.biWidth is 3?
+       *You will have 3 paddings.
+16. What does fseek do?
+       *Fseek is used to move a position pointer through an file stream.
+17. What is SEEK_CUR?
+       *Seek_cur gives thes current location of the position pointer in a file stream.
+18. man in a suit, I think it's David.

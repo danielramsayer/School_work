@@ -1,0 +1,11 @@
+0.  pneumonoultramicroscopicsilicovolcanoconiosis is a condition of fine silica powder deposits in the lungs causing irritation as a result of breathing in vulcanic dust. 
+1.  getrusage (get resource usage) gives resource usage statistics for the calling process. 
+2.  By my count, 16.
+3.  Having a before and after run time offers a measurement by which to guage improvement. Because the size is dynamic, it makes sense to pass a reference rather than a value.
+4.  This is suposing that the for loop that they are referring to is the for loop in 76 - The for loop's first condition is verifying that the characters in the stream aren't at the end of the file (in which case there is nothing to check) and if not continues to run through the character stream. It's then checking that the characters are either alpha or '\'+'0'. If so, great! It starts building a word and so long as it is either an alpha or \/index >0, it'll stack until something not those happens. It will also check itself for length, so long as it's below 45 it's fine, but there are english words greater than 45 at this time. If it has a digit it's not counted. If the index (the first character of the word) is greater than 0, it's not really the first letter is it? Cancels word. It updates the counter, and runs through the words spelling. Checks RUSAGE before and Checks bool mispelled, and then the RUSAGE after. This then gives an update to the time check. If it is mispelled then it prints the mispelled word and increments mispelled, at the end of whcih it preps for the next word to run through the cycle again.
+5.  We're checking this through a set of structures that are built one character at a time, fscanf is meant for a different type of string.
+6.  Check and Load are going to be formula's 
+7.  TODO
+8.  TODO
+9.  TODO
+10. TODO
