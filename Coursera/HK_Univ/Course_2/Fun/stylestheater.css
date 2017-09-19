@@ -8,6 +8,10 @@
   color: #FFFFFF;
 }
 
+.navbar-inverse {
+  background-color: rgb(74, 74, 74);
+}
+
 .top-buffer {
   margin-top: 70px;
 }
@@ -51,7 +55,8 @@
 }
 
 body {
-  padding: 50px;
+  padding: 50px 0px 0px 0px;
+  z-index: 0;
 }
 
 footer {

@@ -1,5 +1,5 @@
 {
-  "name": "ex2",
+  "name": "drama1",
   "version": "1.0.0",
   "description": "testing this out",
   "main": "index.html",
@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server"
   },
-  "author": "",
+  "author": "Daniel Ramsayer",
   "license": "ISC",
   "homepage": "https://github.com/danielramsayer/",
   "devDependencies": {
@@ -16,5 +16,9 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielramsayer/School_work/tree/master/Coursera/HK_Univ/Course_2/Fun"
   }
 }
