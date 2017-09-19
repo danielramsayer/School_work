@@ -8,11 +8,11 @@ profanity = ["fuck", "shit", "bastard", "damn", "goddamn", "hell"]
 
 def swear():
     contents = document.read().lower()
-    
+
     for word in profanity:
         if word in contents:
-            print word, "is in this file", contents.count(word), "times!"
+            print word, "is in this file", contents.count(word), "times."
         else:
-            print word, "is not in this file!"
+            print word, "is not in this file."
     document.close()
 swear()
