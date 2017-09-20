@@ -4,11 +4,21 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
   },
-  "author": "",
+  "author": "Daniel Ramsayer",
   "license": "ISC",
+  "homepage": "https://github.com/danielramsayer/",
   "devDependencies": {
     "lite-server": "^2.3.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielramsayer/School_work/tree/master/Coursera/HK_Univ/Course_2/School_work"
   }
 }
