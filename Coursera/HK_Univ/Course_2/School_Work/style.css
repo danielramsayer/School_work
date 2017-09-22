@@ -23,6 +23,14 @@
     color:floralwhite;
 }
 
+input[type=date]{
+  width: 125px;
+}
+
+input[type=time] {
+  width: 125px;
+}
+
 address{
     font-size:80%;
     margin:0px;
