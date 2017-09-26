@@ -112,7 +112,8 @@
         <h3>This Month's Promotions</h3>
       </div>
       <div class="col-sm col-md">
-        <h2>Weekend Grand Buffet <span class="badge badge-danger">New</span> </h2>
+
+        <h2>Weekend Grand Buffet <button type="button" class="btn btn-danger" data-container="body" data-toggle="weekend" data-placement="top" title="Don't forget" data-content="Ask about our group specials!">New</button> </h2>
         <div class="hidden-xs-down">
          <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
        </div>
@@ -224,6 +225,11 @@
     $(document).ready(function() {
       $('[data-toggle="tooltip"]').tooltip();
     })
+  </script>
+  <script>
+    $(document).ready(function(){
+        $('[data-toggle="weekend"]').popover();
+    });
   </script>
 </body>
 
