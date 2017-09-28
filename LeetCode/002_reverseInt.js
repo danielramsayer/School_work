@@ -14,15 +14,14 @@ top and bottom range for 32 bit signed int: 2147483647, -2147483647.
 
 function reverse(x) {
     var total;
-    max = 2147483647;
     x = x.toString();
     if (x[0] == '-') {
-        x = x.slice(1,x.length)
-        let reversed = x.split("").reverse().join("")
+        x = x.slice(1,x.length);
+        let reversed = x.split("").reverse().join("");
         total = parseInt("-" + reversed);
     } else {
-        let reversed = x.split("").reverse().join("")
+        let reversed = x.split("").reverse().join("");
         total = parseInt(reversed);
     }
     return (total >> 0 === total) ? total : 0;
-} 
+}
