@@ -101,7 +101,7 @@ function validMove(color) {
     soundToPlay(color);
     var checker = game.pSeq.length === game.cSeq.length;
     if (checker) {
-      if (game.count === 2) {
+      if (game.count === 20) {
         alert("Congratulations! You've made it to the end!");
         resetGame();
       } else {
