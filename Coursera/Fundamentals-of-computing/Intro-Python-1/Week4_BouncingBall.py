@@ -1,3 +1,4 @@
+#Please remember to play here: http://www.codeskulptor.org/ - the simplegui library is not standard.
 import simplegui
 
 # Initialize globals
@@ -13,7 +14,7 @@ def draw(canvas):
     # Update ball position
     ball_pos[0] += vel[0]
     ball_pos[1] += vel[1]
-    
+
     # collide and reflect off of th sides of canvas
     if ball_pos[0] <= BALL_RADIUS:
         vel[0] = - vel[0]
@@ -23,7 +24,7 @@ def draw(canvas):
         vel[1] = - vel[1]
     elif ball_pos[1] <= BALL_RADIUS:
         vel[1] = - vel[1]
-    
+
     # Draw ball
     canvas.draw_circle(ball_pos, BALL_RADIUS, 2, "Red", "White")
 

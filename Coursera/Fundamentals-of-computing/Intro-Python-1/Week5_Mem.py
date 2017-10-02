@@ -1,3 +1,4 @@
+#Please remember to play here: http://www.codeskulptor.org/ - the simplegui library is not standard.
 # implementation of card game - Memory
 
 import simplegui
@@ -16,15 +17,15 @@ def new_game():
     card1 = -1
     card2 = -1
     moves = 0
-     
+
 # define event handlers
 def mouseclick(pos):
     global state, moves, card1, card2
     DIndex = list(pos)[0]//50
-    
+
     if not exposed[DIndex]:
         if state == 0:
-            card1 = DIndex            
+            card1 = DIndex
             exposed[DIndex] = True
             state = 1
         elif state == 1:
@@ -39,9 +40,9 @@ def mouseclick(pos):
             exposed[DIndex] = True
             card1 = DIndex
             card2 = -1
-            moves += 1            
-                        
-# cards are logically 50x100 pixels in size    
+            moves += 1
+
+# cards are logically 50x100 pixels in size
 def draw(canvas):
     for i in range(16):
         if exposed[i]:
@@ -50,7 +51,7 @@ def draw(canvas):
         else:
             canvas.draw_polygon([[i*50, 0], [(i+1)*50, 0], [(i+1)*50, 100], [i*50, 100]], 1, "Black", "Blue")
     label.set_text("Turns = " + str(moves))
-    
+
 # create frame and add a button and labels
 frame = simplegui.create_frame("Memory", 800, 100)
 frame.add_button("Reset", new_game)

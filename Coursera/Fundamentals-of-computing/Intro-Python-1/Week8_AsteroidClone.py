@@ -107,10 +107,10 @@ class Ship:
         self.image_size = info.get_size()
         self.radius = info.get_radius()
         self.speed = 1
-        
+
     def get_radius(self):
         return self.radius
-    
+
     def get_position(self):
         return self.pos
 
@@ -133,7 +133,7 @@ class Ship:
             acc = angle_to_vector(self.angle)
             self.vel[0] += acc[0] * .1
             self.vel[1] += acc[1] * .1
-            
+
         self.vel[0] *= .99
         self.vel[1] *= .99
 
@@ -145,13 +145,13 @@ class Ship:
             ship_thrust_sound.play()
         else:
             ship_thrust_sound.pause()
-       
+
     def increment_angle_vel(self):
         self.angle_vel += .05
-        
+
     def decrement_angle_vel(self):
         self.angle_vel -= .05
-        
+
     def shoot(self):
         moving_ahead = angle_to_vector(self.angle)
         missile_pos = [self.pos[0] + self.radius * moving_ahead[0], self.pos[1] + self.radius * moving_ahead[1]]
@@ -211,8 +211,8 @@ class Sprite:
             return True
         else:
             return False
-        
-        
+
+
 #key handlers
 def keydown(key):
     if key == simplegui.KEY_MAP['left']:
@@ -223,7 +223,7 @@ def keydown(key):
         my_ship.set_thrust(True)
     elif key == simplegui.KEY_MAP['space']:
         my_ship.shoot()
-        
+
 def keyup(key):
     if key == simplegui.KEY_MAP['left']:
         my_ship.increment_angle_vel()
@@ -242,11 +242,11 @@ def click(pos):
     if (not playing) and inwidth and inheight:
         playing = True
         soundtrack.rewind()
-        soundtrack.play()        
-        timer.start()        
+        soundtrack.play()
+        timer.start()
         score = 0
         lives = 3
-        
+
 
 def draw(canvas):
     global time, lives, score, rock_group, playing
@@ -287,10 +287,10 @@ def draw(canvas):
 
     #splash screen
     if not playing:
-        canvas.draw_image(splash_image, splash_info.get_center(), 
-                          splash_info.get_size(), [WIDTH / 2, HEIGHT / 2], 
+        canvas.draw_image(splash_image, splash_info.get_center(),
+                          splash_info.get_size(), [WIDTH / 2, HEIGHT / 2],
                           splash_info.get_size())
-        
+
 # timer handler that spawns a rock
 def rock_spawner():
     global rock_group, playing

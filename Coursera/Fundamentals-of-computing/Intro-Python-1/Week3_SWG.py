@@ -1,3 +1,4 @@
+#Please remember to play here: http://www.codeskulptor.org/ - the simplegui library is not standard.
 # template for "Stopwatch: The Game"
 
 # define global variables
@@ -18,11 +19,11 @@ def format(t):
     tenmin = int(t / 100) % 6
     formatted = str(minute) + ":" + str(tenmin) + str(second) + "." + str(tenth)
     return formatted
-    
+
 # define event handlers for buttons; "Start", "Stop", "Reset"
 def start():
     global running
-    timer.start()   
+    timer.start()
     running = True
 
 def stop():
@@ -49,7 +50,7 @@ def tick():
 def draw(canvas):
     canvas.draw_text(format(counter), (50, 100), 36, "Red")
     canvas.draw_text(str(score) + "/" + str(total), (50, 50), 24, "gray")
-    
+
 # create frame
 frame = simplegui.create_frame("StopWatch - The Game", 200, 200)
 

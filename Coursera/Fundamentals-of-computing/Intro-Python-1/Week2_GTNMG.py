@@ -1,3 +1,4 @@
+#Please remember to play here: http://www.codeskulptor.org/ - the simplegui library is not standard.
 #Guess the Number Mini Game!
 
 import simplegui, random
@@ -13,21 +14,21 @@ def new_game():
     sec_num = random.randrange(0, num_range)
 
 def range100():
-    # button that changes the range to [0,1000) and starts a new game 
+    # button that changes the range to [0,1000) and starts a new game
     global num_range, guesses
     print "New Game! You're trying for ", num_range, " possibilities!"
     num_range = 100
     guesses = 7
     new_game()
-    
+
 def range1000():
-    # button that changes the range to [0,1000) and starts a new game     
+    # button that changes the range to [0,1000) and starts a new game
     global num_range, guesses
     print "New Game! You're trying for ", num_range, " possibilities!"
     num_range = 1000
     guesses = 10
     new_game()
-    
+
 def input_guess(guess):
     # main game logic of the game
     global guesses
@@ -40,22 +41,22 @@ def input_guess(guess):
             print "Lower!"
         elif guess < sec_num:
             print "Higher!"
-        else: 
+        else:
             print "That is correct!"
             new_game()
     else:
         print "Sorry! You are out of guesses! Please select game you'd like to play. :) "
         new_game()
-    
+
 # create frame
 frame = simplegui.create_frame("Guess That Number!", 200, 200)
 
 # register event handlers for control elements and start frame
 frame.add_button("Range is [0,100)", range100, 200)
 frame.add_button("Range is [0,1000)", range1000, 200)
-frame.add_input("Enter Input Please:", input_guess, 200) 
+frame.add_input("Enter Input Please:", input_guess, 200)
 
-# call new_game 
+# call new_game
 new_game()
 
 # always remember to check your completed program against the grading rubric

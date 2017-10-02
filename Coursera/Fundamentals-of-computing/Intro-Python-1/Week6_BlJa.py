@@ -1,3 +1,4 @@
+#Please remember to play here: http://www.codeskulptor.org/ - the simplegui library is not standard.
 # Mini-project #6 - Blackjack
 
 import simplegui
@@ -10,7 +11,7 @@ card_images = simplegui.load_image("http://storage.googleapis.com/codeskulptor-a
 
 CARD_BACK_SIZE = (72, 96)
 CARD_BACK_CENTER = (36, 48)
-card_back = simplegui.load_image("http://storage.googleapis.com/codeskulptor-assets/card_jfitz_back.png")    
+card_back = simplegui.load_image("http://storage.googleapis.com/codeskulptor-assets/card_jfitz_back.png")
 
 # initialize some useful global variables
 in_play = False
@@ -45,10 +46,10 @@ class Card:
         return self.rank
 
     def draw(self, canvas, pos):
-        card_loc = (CARD_CENTER[0] + CARD_SIZE[0] * RANKS.index(self.rank), 
+        card_loc = (CARD_CENTER[0] + CARD_SIZE[0] * RANKS.index(self.rank),
                     CARD_CENTER[1] + CARD_SIZE[1] * SUITS.index(self.suit))
         canvas.draw_image(card_images, card_loc, CARD_SIZE, [pos[0] + CARD_CENTER[0], pos[1] + CARD_CENTER[1]], CARD_SIZE)
-        
+
 # define hand class
 class Hand:
     def __init__(self):
@@ -70,7 +71,7 @@ class Hand:
         # count aces as 1, if the hand has an ace, then add 10 to hand value if it doesn't bust
         # compute the value of the hand, see Blackjack video
         value = 0
-        Ace = False      
+        Ace = False
         for card in self.cards:
             rank = card.get_rank()
             value += VALUES[rank]
@@ -78,32 +79,32 @@ class Hand:
                 Ace = True
         if (value < 11 and Ace):
             #per prof's instructions:
-            value += 10            
+            value += 10
         return value
-   
+
     def draw(self, canvas, pos):
         # draw a hand on the canvas, use the draw method for cards
         for card in self.cards:
             card.draw(canvas, pos)
             pos[0] += 80
- 
-        
-# define deck class 
+
+
+# define deck class
 class Deck:
     def __init__(self):
         # create a Deck object
         self.cards = []
         for suit in SUITS:
             for rank in RANKS:
-                self.cards.append(Card(suit,rank)) 
+                self.cards.append(Card(suit,rank))
 
     def shuffle(self):
-        # shuffle the deck 
+        # shuffle the deck
         random.shuffle(self.cards)    # use random.shuffle()
 
     def deal_card(self):
         return self.cards.pop(0)# deal a card object from the deck
-    
+
     def __str__(self):
         # return a string representing the deck
         deck = ""
@@ -137,17 +138,17 @@ def deal():
 def hit():
     # replace with your code below
     global in_play, players_hand, outcome, deck, dealers_score, players_score
-    
+
     # if the hand is in play, hit the player
     if in_play:
         players_hand.add_card(deck.deal_card())
-    
+
     # if busted, assign a message to outcome, update in_play and score
     if players_hand.get_value() > 21:
         outcome = "You done lost there, pardner"
-        dealers_score += 1 
+        dealers_score += 1
         in_play = False
-    
+
 def stand():
     global outcome, players_score, dealers_score, in_play
 
@@ -166,24 +167,24 @@ def stand():
         else:
             outcome = "Well blow me over, looks like ya won!"
             players_score += 1
-   
-# draw handler    
+
+# draw handler
 def draw(canvas):
     global dealers_score, players_score
     # test to make sure that card.draw works, replace with your code below
     canvas.draw_text("BlackJack", [220, 60], 40, "Red")
-    
+
     dealers_hand.draw(canvas, [100, 150])
     players_hand.draw(canvas, [100, 300])
-    
+
     canvas.draw_text(outcome, [20,110], 30, "Black")
-    
+
     canvas.draw_text("Dealer: %s" % dealers_score, [10, 200], 20 ,"Black")
     canvas.draw_text("Player: %s" % players_score, [10, 350], 20 ,"Black")
-    
+
     if in_play:
         canvas.draw_image(card_back, CARD_BACK_CENTER, CARD_BACK_SIZE, (136,199), CARD_BACK_SIZE)
-                      
+
 #    card = Card("S", "A")
 #    card.draw(canvas, [300, 300])
 
