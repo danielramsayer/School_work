@@ -37,4 +37,5 @@ class Solution(object):
             counter -= 200
 
         return counter
-        
+
+    
