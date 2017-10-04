@@ -32,6 +32,41 @@ module.exports = function(grunt){
           server: {
             baseDir: "./"
           }
+        },
+        copy: {
+          html: {
+            files: [{
+              expand: true,
+              dot: true,
+              cwd: './',
+              src: ['*.html'],
+              dest: 'dist'
+            }]
+          },
+          fonts: {
+            files: [{
+              expand: true,
+              dot: true,
+              cwd: 'node_modules/font-awesome',
+              src: ['fonts/*.*'],
+              dest: 'dist'
+            }]
+          }
+        }
+      },
+      clean: {
+        build: {
+          src:['dist/']
+        }
+      }
+      imagmin: {
+        dynamic: {
+          files: [{
+            expand: true,
+            cwd: './',
+            src: ['img/*.{jpg,png,gif'],
+            dest:'dist/'
+          }]
         }
       }
     }
