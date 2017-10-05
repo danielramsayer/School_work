@@ -1,173 +1,174 @@
 'use strict';
 
 module.exports = function (grunt) {
-  // Time how long tasks take. Can help when optimizing build times
-  require('time-grunt')(grunt);
+    // Time how long tasks take. Can help when optimizing build times
+    require('time-grunt')(grunt);
 
-  // Automatically load required Grunt tasks
-  require('jit-grunt')(grunt);
+    // Automatically load required Grunt tasks
+    require('jit-grunt')(grunt, {
+      useminPrepare: 'grunt-usemin'
+    });
 
-  // Define the configuration for all the tasks
-  grunt.initConfig({
-          pkg: grunt.file.readJSON('package.json'),
-
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          'app/scripts/{,*/}*.js'
-        ]
-      }
-    },
-    copy: {
-      dist: {
-        cwd: 'app',
-        src: [ '**','!styles/**/*.css','!scripts/**/*.js' ],
-        dest: 'dist',
-        expand: true
-      },
-      fonts: {
-          files:[
-              {
-                  //for bootstrap fonts
+    // Define the configuration for all the tasks
+    grunt.initConfig({
+        sass: {
+            dist: {
+                files: {
+                    'css/styles.css': 'css/styles.scss'
+                }
+            }
+        }
+        watch: {
+            files: 'css/*.scss',
+            tasks: ['sass']
+        },
+        browserSync: {
+            dev: {
+                bsFiles: {
+                    src : [
+                        'css/*.css',
+                        '*.html',
+                        'js/*.js'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    server: {
+                        baseDir: "./"
+                    }
+                }
+            }
+        }
+        copy: {
+            html: {
+                files: [
+                {
+                    //for html
                     expand: true,
                     dot: true,
-                    cwd: 'bower_components/bootstrap/dist',
-                    src: ['fonts/*.*'],
+                    cwd: './',
+                    src: ['*.html'],
                     dest: 'dist'
-                }, {
+                }]
+            },
+            fonts: {
+                files: [
+                {
                     //for font-awesome
                     expand: true,
                     dot: true,
-                    cwd: 'bower_components/font-awesome',
+                    cwd: 'node_modules/font-awesome',
                     src: ['fonts/*.*'],
                     dest: 'dist'
-                }
-          ]
-        }
-    },
-    clean: {
-        build:{
-            src: [ 'dist/']
-        }
-    },
-        useminPrepare: {
-            html: 'app/index.html',
-            options: {
-                dest: 'dist'
+                }]
             }
         },
-          // Concat
+
+        clean: {
+            build: {
+                src: [ 'dist/']
+            }
+        }
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,                  // Enable dynamic expansion
+                    cwd: './',                   // Src matches are relative to this path
+                    src: ['img/*.{png,jpg,gif}'],   // Actual patterns to match
+                    dest: 'dist/'                  // Destination path prefix
+                }]
+            }
+        }
+        useminPrepare: {
+            foo: {
+                dest: 'dist',
+                src: ['contactus.html','aboutus.html','index.html']
+            },
+            options: {
+                flow: {
+                    steps: {
+                        css: ['cssmin'],
+                        js:['uglify']
+                    },
+                    post: {
+                        css: [{
+                            name: 'cssmin',
+                            createConfig: function (context, block) {
+                            var generated = context.options.generated;
+                                generated.options = {
+                                    keepSpecialComments: 0, rebase: false
+                                };
+                            }
+                        }]
+                    }
+                }
+            }
+        },
+
+        // Concat
         concat: {
             options: {
                 separator: ';'
             },
+
             // dist configuration is provided by useminPrepare
             dist: {}
         },
-          // Uglify
+
+        // Uglify
         uglify: {
             // dist configuration is provided by useminPrepare
             dist: {}
         },
+
         cssmin: {
             dist: {}
         },
-          // Filerev
+
+        // Filerev
         filerev: {
             options: {
                 encoding: 'utf8',
                 algorithm: 'md5',
                 length: 20
             },
+
             release: {
-                // filerev:release hashes(md5) all assets (images, js and css )
-                // in dist directory
+            // filerev:release hashes(md5) all assets (images, js and css )
+            // in dist directory
                 files: [{
                     src: [
-                        'dist/scripts/*.js',
-                        'dist/styles/*.css',
+                        'dist/js/*.js',
+                        'dist/css/*.css',
                     ]
                 }]
             }
         },
-          // Usemin
-          // Replaces all assets with their revved version in html and css files.
-          // options.assetDirs contains the directories for finding the assets
-          // according to their relative paths
+
+        // Usemin
+        // Replaces all assets with their revved version in html and css files.
+        // options.assetDirs contains the directories for finding the assets
+        // according to their relative paths
         usemin: {
-            html: ['dist/*.html'],
-            css: ['dist/styles/*.css'],
+            html: ['dist/contactus.html','dist/aboutus.html','dist/index.html'],
             options: {
-                assetsDirs: ['dist', 'dist/styles']
+                assetsDirs: ['dist', 'dist/css','dist/js']
             }
-        },
-        watch: {
-            copy: {
-                files: [ 'app/**', '!app/**/*.css', '!app/**/*.js'],
-                tasks: [ 'build' ]
-            },
-            scripts: {
-                files: ['app/scripts/app.js'],
-                tasks:[ 'build']
-            },
-            styles: {
-                files: ['app/styles/mystyles.css'],
-                tasks:['build']
-            },
-            livereload: {
-                options: {
-                    livereload: '<%= connect.options.livereload %>'
-                },
-                files: [
-                    'app/{,*/}*.html',
-                    '.tmp/styles/{,*/}*.css',
-                    'app/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
-                ]
-          }
-        },
-        connect: {
-          options: {
-            port: 9000,
-            // Change this to '0.0.0.0' to access the server from outside.
-            hostname: 'localhost',
-            livereload: 35729
-          },
-          dist: {
-            options: {
-              open: true,
-              base:{
-                   path: 'dist',
-                options: {
-                    index: 'index.html',
-                    maxAge: 300000
-                }
-              }
-            }
-          }
-        },
-  });
+        }
+    });
 
-  require('jit-grunt')(grunt, {
-    useminPrepare: 'grunt-usemin'
-  });
+    grunt.registerTask('css', ['sass']);
+    grunt.registerTask('default', ['browserSync', 'watch']);
+    grunt.registerTask('build', [
+        'clean',
+        'copy',
+        'imagemin',
+        'useminPrepare',
+        'concat',
+        'cssmin',
+        'uglify',
+        'filerev',
+        'usemin'
+    ]);
 
-  grunt.registerTask('build', [
-    'clean',
-    'jshint',
-    'useminPrepare',
-    'concat',
-    'cssmin',
-    'uglify',
-    'copy',
-    'filerev',
-    'usemin'
-  ]);
-
-  grunt.registerTask('serve',['build','connect:dist','watch']);
 };
