@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('[data-toggle="weekend"]').popover();
   $('#mycarousel').carousel({
-    interval: 500
+    interval: 5000
   });
   $("#carousel-button").click(function() {
     if ($("#carousel-button").children("span").hasClass("fa-pause")) {
