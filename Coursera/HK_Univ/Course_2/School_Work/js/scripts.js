@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('[data-toggle="weekend"]').popover();
   $('#mycarousel').carousel({
-    interval: 5000
+    interval: 15000
   });
   $("#carousel-button").click(function() {
     if ($("#carousel-button").children("span").hasClass("fa-pause")) {
@@ -14,5 +14,9 @@ $(document).ready(function() {
       $("#carousel-button").children("span").addClass("fa-pause");
     }
   });
+  var span = document.getElementsByClassName("close")[0];
+
+  span.onclick = function() {
+      modal.style.display = "none";
 
 })
