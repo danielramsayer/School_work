@@ -19,7 +19,7 @@
 .jumbotron {
     padding:70px 30px 70px 30px;
     margin:0px auto;
-    background: #9575CD ;
+    background: #9575CD;
     color:floralwhite;
 }
 
@@ -51,6 +51,24 @@ body{
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding: 5%;
+}
+
+.modal-header {
+  background-color: #512DA8;
+  color:floralwhite;
+}
+
+.modal-body {
+  background-color: #D1C4E9;
+}
+
+.modal-footer {
+  background: #9575CD;
+  color:floralwhite;
+}
+
+.close {
+  color:floralwhite;
 }
 
 .carousel {
