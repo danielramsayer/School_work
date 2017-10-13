@@ -5,9 +5,9 @@ MenuBar mbar;
 Menu menu,submenu;
 MenuItem m1,m2,m3,m4,m5;
 
-    public AWTMenu()
+    public void AWTMenu()
     {
-
+      System.out.println("2");
     // Set frame properties
     setTitle("AWT Menu"); // Set the title
     setSize(400,400); // Set size to the frame
@@ -52,6 +52,8 @@ MenuItem m1,m2,m3,m4,m5;
     }
     public static void main(String args[])
     {
-    new AWTMenu();
+      System.out.println("1");
+      AWTMenu f=new AWTMenu();
+      f.AWTMenu();
     }
 }

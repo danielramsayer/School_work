@@ -1,7 +1,7 @@
 import java.awt.*;
 
 class MenuExample{
-  First(){
+  public void First(){
     Frame f=new Frame();
     Button TS=new Button("Trade Shares");
     TS.setBounds(30,50,80,30);
@@ -25,7 +25,8 @@ class MenuExample{
   }
 
   public static void main(String args[]){
-    First f=new First();
+    MenuExample f=new MenuExample();
+    f.First();
   }
   //public static void exit(int status){
 
