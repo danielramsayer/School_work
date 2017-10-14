@@ -1,3 +1,8 @@
+/*
+Daniel Ramsayer
+*/
+
+
 function showPattern(){
   var top = 25, left = 25;
   var width = 300, height=300;
