@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <body>
+
     <nav class="navbar navbar-inverse navbar-toggleable-sm fixed-top">
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
@@ -39,34 +39,38 @@
 
 
     <div id="loginModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" id="loginclose">&times;</button>
-                    <h4 class="modal-title">Login</h4>
-                </div>
-                <div class="modal-body">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label class="sr-only" for="email">Email Address </label>
-                            <input type="text" class="form-control input-sm" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label class="sr-only" for="password">Password </label>
-                            <input type="password" class="form-control input-sm" placeholder="Password">
-                        </div>
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember Me</span>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-info btn-sm">Sign in</button>
-                        <button type="button" class="btn btn-default btn-sm" id="logincancel">Cancel</button>
-                    </form>
-                </div>
-            </div>
+      <div class="modal-dialog" role="content">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Login</h4>
+            <button type="button" class="close">
+              &times;
+          </div>
+          <div class="modal-body">
+            <form class="form-inline">
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                <input type="email" class="form-control form-control-sm mr-1" id="exampleInputEmail3" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword3">Password</label>
+                <input type="password" class="form-control form-control-sm mr-1" id="exampleInputPassword3" placeholder="Password">
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox"> Remember me
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-sm">Cancel</button>
+            <button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+          </div>
         </div>
+      </div>
     </div>
+
     <header class="jumbotron">
       <div class="container">
         <div class="row row-header">
