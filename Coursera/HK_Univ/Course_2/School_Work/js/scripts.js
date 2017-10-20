@@ -3,6 +3,7 @@ $(document).ready(function() {
   $('#mycarousel').carousel({
     interval: 15000
   });
+
   $("#carousel-button").click(function() {
     if ($("#carousel-button").children("span").hasClass("fa-pause")) {
       $("#mycarousel").carousel("pause");
