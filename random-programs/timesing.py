@@ -1,4 +1,4 @@
-def tinesing (a,b):
+def timesing (a,b):
     x = a
     y = b
     z = 0
