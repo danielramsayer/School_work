@@ -8,3 +8,28 @@ def Peasants (a,b):
         y = y << 1
         x = x >> 1
     return z
+
+#Example of the sequence
+"""
+20, 7
+x = 20, y = 7
+z = 0
+x > 0
+x != odd
+y = y * 2 (14)
+x = 10
+x != odd
+y = 28
+x = 5
+x = odd
+z = 0 + 28
+y = 56
+x = 2
+x != odd
+y = 112
+x = 1
+x = odd
+z = 28 + 112
+y = 224
+x = 0
+"""
