@@ -6,12 +6,19 @@
 # edges between nodes that have an Eulerian tour.
 #
 
+def edge(x,y):
+    if x < y:
+        return (x,y)
+    else:
+        return (y, x)
+
+
 def create_tour(nodes):
     # your code here
     tour = []
     length = len(nodes)
     for instances in range(length):
-        
+        term = edge
     return []
 
 #########
