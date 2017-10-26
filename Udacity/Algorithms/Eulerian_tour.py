@@ -8,6 +8,10 @@
 
 def create_tour(nodes):
     # your code here
+    tour = []
+    length = len(nodes)
+    for instances in range(length):
+        
     return []
 
 #########
