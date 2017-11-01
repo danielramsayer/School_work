@@ -10,6 +10,7 @@ def Peasants (a,b):
     return z
 
 #Example of the sequence
+#checking update.
 """
 20, 7
 x = 20, y = 7
