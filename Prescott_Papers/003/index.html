@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>WebScript</title>
+<link rel="stylesheet" href="style.css">
+
+<body>
+	<div id="qunit">
+		<main id=main>
+		</main>
+
+	</div>
+	<div id="qunit-fixture"></div>
+
+	<section id=emoji>
+		<h1>Emoji</h1>
+		<p id=e1>:-)</p>
+		<p id=e2>(TM)</p>
+		<p id=e3>WebScript(TM) :-)</p>
+		<p id=e4>Do you &lt;3 me now?</p>
+		<p id=e5>:-):-):-)&lt;3&lt;3&lt;3</p>
+	</section>
+
+	<section id=emojiAdvanced>
+		<h1>Emoji Advanced</h1>
+		<p id=ea1>:-)</p>
+		<p id=ea2>(TM)</p>
+		<p id=ea3>WebScript(TM) <span>:-</span>)</p>
+		<p id=ea4>Do you &lt;3 me now?</p>
+		<p id=ea5>:-):-):-)&lt;3&lt;3&lt;3</p>
+	</section>
+
+	<section id=spanners>
+		<p id=spanner1>Each word should be wrapped in a span element when this test passes.</p>
+		<p id=spanner2>Can your code handle <i>nested <b>child</b></i> elements?</p>
+	</section>
+
+
+	<section id=clickables>
+		<p>Click me</p>
+		<p>Click me</p>
+		<p>Click me</p>
+		<p>Click me</p>
+		<p>Click me</p>
+	</section>
+
+	<section id=linkedDrawings>
+		<p>Your drawing should look like this...</p>
+		<img id=linkedDrawingForComparison alt="What your box should look like." src="data:image/png;base64,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">
+
+		<p>Your version goes here...</p>
+		<canvas id=linkedDrawingCanvas width=300 height=300></canvas>
+	</section>
+
+
+	<script>
+		window.topic = "ws_cwk_1_2017 ";
+	</script>
+	<script src="qunit.js "></script>
+	<script src="index.js "></script>
+	<script src="logger.js "></script>
+	<script src="assess.js "></script>
+</body>
+
+</html>
