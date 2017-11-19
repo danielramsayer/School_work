@@ -2,7 +2,7 @@
  * Name:
  * Program name: Index.java
  * Date: 18 Oct 17
- * Purpose: file reading and writing program.
+ * Purpose: file reading and writing program using 1 class and 2 methods.
  */
 import java.io.*;
 import java.util.Scanner;
