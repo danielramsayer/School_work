@@ -49,6 +49,8 @@ const DISH = {
 })
 export class DishdetailComponent implements OnInit {
 
+  dishelt = DISH;
+
   constructor() { }
 
   ngOnInit() {
