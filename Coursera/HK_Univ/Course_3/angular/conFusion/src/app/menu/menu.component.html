@@ -38,4 +38,18 @@
     </md-card>
   </div>
 
+  <div fxFlex *ngIf='dishelt'>
+    <md-card>
+      <md-card-header>
+        <h3>
+          {{dishelt.name | uppercase}}
+        </h3>
+      </md-card-header>
+      <img width="20px" md-card-image src="{{dishelt.image}}" alt="{{dishelt.name}}">
+      <md-card-content>
+        <p>{{dishelt.description }}</p>
+      </md-card-content>
+    </md-card>
+  </div>
+
 </div>
