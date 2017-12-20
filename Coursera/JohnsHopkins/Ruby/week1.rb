@@ -17,3 +17,8 @@ end
 times_2 = 2
 times_2 *= 2 and puts times_2 while times_2 < 100
 puts times_2
+
+File.open("newFile.txt","a") do |file|
+  file.puts "Line One"
+  file.puts "Line Two"
+end
