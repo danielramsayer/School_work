@@ -1,7 +1,7 @@
 #Some easy warm up code from CodeByte
-def LetterChanges(str):
+def LetterChanges(string):
     newthing = ""
-    for word in str:
+    for word in string:
         for letter in word:
             if letter.isalpha()==False:
                 newthing += letter
