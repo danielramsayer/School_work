@@ -13,7 +13,6 @@ def LetterChanges(str):
             else:
                 letter = 'A'
                 newthing += letter
-    # code goes here
     return newthing
 
 # keep this function call here
