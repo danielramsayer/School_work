@@ -1,3 +1,4 @@
+#Some easy warm up code from CodeByte
 def SimpleAdding(num):
     total = 0
     start = 1
