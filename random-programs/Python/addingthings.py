@@ -6,5 +6,4 @@ def SimpleAdding(num):
         start += 1
     return total
 
-# keep this function call here
 print SimpleAdding(raw_input())
