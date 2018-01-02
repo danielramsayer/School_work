@@ -1,3 +1,4 @@
+#Some easy warm up code from CodeByte
 def LetterChanges(str):
     newthing = ""
     for word in str:
