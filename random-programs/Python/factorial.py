@@ -6,6 +6,4 @@ def FirstFactorial(num):
         num -= 1
     return total
 
-
-
 print FirstFactorial(raw_input())
