@@ -7,5 +7,4 @@ def SimpleAdding(num):
         start += 1
     return total
 
-#call function
 print SimpleAdding(raw_input())
