@@ -7,5 +7,5 @@ def FirstFactorial(num):
     return total
 
 
-# keep this function call here
+
 print FirstFactorial(raw_input())
