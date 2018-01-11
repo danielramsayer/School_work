@@ -6,8 +6,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-
-
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -23,6 +21,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpModule,
     MaterialModule,
     FlexLayoutModule
   ],
