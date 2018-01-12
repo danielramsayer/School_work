@@ -2,12 +2,14 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
+  background-color: rgb(245, 145, 89);
   padding: 10;
   margin: 10;
   font-family: Roboto, sans-serif;
 }
 
 .container {
+  background-color: white;
   margin: 20px;
   display: flex;
 }
