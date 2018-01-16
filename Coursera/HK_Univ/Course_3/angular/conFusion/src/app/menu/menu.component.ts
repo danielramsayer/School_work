@@ -11,14 +11,14 @@ const DISHES: Dish[] = [
       price: '4.99',
       description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.'
     },
-    {
+    /*{
       name: 'Zucchipakoda',
       image: '/assets/images/zucchipakoda.png',
       category: 'appetizer',
       label: '',
       price: '1.99',
       description: 'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'
-    },
+    },*/
     {
       name: 'Vadonut',
       image: '/assets/images/vadonut.png',
@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
 
   dishes = DISHES;
 
-  selectedDish: Dish = DISHES[1];
+  selectedDish: Dish = DISHES[2];
 
   constructor() { }
 
