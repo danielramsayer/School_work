@@ -30,14 +30,11 @@
 
   <div fxFlex="40">
     <div fxFlex>
-      <md-grid-list cols="2" rowHeight="200px">
         <md-grid-tile *ngFor="let dish of Dishesnom">
-          <img height="200px" src={{dish.image}} alt={{dish.name}}>
           <md-grid-tile-footer>
-            <h1 md-line>{{dish.name | uppercase}}</h1>
+            <h1 md-line>{{Dishnom.name | uppercase}}</h1>
           </md-grid-tile-footer>
         </md-grid-tile>
-      </md-grid-list>
     </div>
     <p>This is a thing?</p>
 
