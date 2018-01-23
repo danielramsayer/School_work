@@ -29,8 +29,15 @@
   </div>
 
   <div fxFlex="40">
+    <div fxFlex *ngIf="Dishesnom">
 
-  </div>
+        <h3>Comments</h3>
+        <md-grid-tile *ngFor="let dish of Dishesnom">
+          <md-grid-tile-footer>
+            <h1 md-line>{{Dishnom.name | uppercase}}</h1>
+          </md-grid-tile-footer>
+        </md-grid-tile>
+    </div>
 
 
   </div>
