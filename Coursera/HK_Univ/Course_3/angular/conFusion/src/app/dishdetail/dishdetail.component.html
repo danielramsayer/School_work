@@ -28,7 +28,15 @@
   </div>
 
   <div fxFlex="40">
-
+    <div fxFlex *ngIf="Dishesnom">
+      <li ng-repeat="comments in dishdetail.Dishesnom.comments | orderBy : dishdetail.sortType">
+      <blockquote>
+        <h3>Comments</h3>
+        <P>{{comments.rating}} Stars!</P>
+        <P>{{comments.comment}}</P>
+        <footer><cite>{{comment.author}}</cite></footer>
+      </blockquote>
+    </div>
   </div>
 
 </div>
