@@ -29,27 +29,26 @@
 
   <div fxFlex>
     <div fxFlex *ngIf="Dishesnom">
-
-          <md-card>
-            <md-card-header>
-              <md-card-title>
-                <h3>COMMENTS</h3>
-              </md-card-title>
-            </md-card-header>
-            <md-card-content>
-              <blockquote>
-                <md-list-item *ngFor="let listcomment of Dishesnom.comments">
-                  <dl>
-                    <P>&nbsp;
-                    <dt md-line>{{listcomment.comment}}</dt>
-                    <dt md-line>{{listcomment.rating}} Stars</dt>
-                    <dt md-line>-- {{listcomment.author}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <strong>{{listcomment.date | date: "MMM, dd, yyyy"}}</strong></dt>
-                  </dl>
-                </md-list-item>
-              </blockquote>
-            </md-card-content>
-          </md-card>
+      <md-card>
+        <md-card-header>
+          <md-card-title>
+            <h3>COMMENTS</h3>
+          </md-card-title>
+        </md-card-header>
+        <md-card-content>
+          <blockquote>
+            <md-list-item *ngFor="let listcomment of Dishesnom.comments">
+              <dl>
+                <P>&nbsp;
+                <dt md-line>{{listcomment.comment}}</dt>
+                <dt md-line>{{listcomment.rating}} Stars</dt>
+                <dt md-line>-- {{listcomment.author}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <strong>{{listcomment.date | date: "MMM, dd, yyyy"}}</strong></dt>
+              </dl>
+            </md-list-item>
+          </blockquote>
+        </md-card-content>
+      </md-card>
     </div>
   </div>
 
