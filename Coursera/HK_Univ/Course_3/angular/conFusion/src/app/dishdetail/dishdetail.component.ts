@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DishdetailComponent implements OnInit {
 
-  Dishesnom = DISH;
+  dish = DISH;
 
   constructor() { }
 
