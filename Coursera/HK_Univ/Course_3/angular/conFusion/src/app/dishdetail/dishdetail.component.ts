@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DishdetailComponent implements OnInit {
 
-  dish = DISH;
+  dish: Dish;
 
   constructor() { }
 
