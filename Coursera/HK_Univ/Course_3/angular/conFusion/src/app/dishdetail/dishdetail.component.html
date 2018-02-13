@@ -7,16 +7,16 @@
     fxLayoutGap.xs="0">
 
   <div fxFlex>
-    <div fxFlex *ngIf="Dishesnom">
+    <div fxFlex *ngIf="dish">
       <md-card>
         <md-card-header>
           <md-card-title>
-            <h3>{{Dishesnom.name | uppercase}}</h3>
+            <h3>{{dish.name | uppercase}}</h3>
           </md-card-title>
         </md-card-header>
-        <img md-card-image src={{Dishesnom.image}} alt={{Dishesnom.name}}>
+        <img md-card-image src={{dish.image}} alt={{dish.name}}>
         <md-card-content>
-          <p>{{Dishesnom.description}}
+          <p>{{dish.description}}
           </p>
         </md-card-content>
         <md-card-actions>
@@ -28,7 +28,7 @@
   </div>
 
   <div fxFlex>
-    <div fxFlex *ngIf="Dishesnom">
+    <div fxFlex *ngIf="dish">
       <md-card>
         <md-card-header>
           <md-card-title>
@@ -37,7 +37,7 @@
         </md-card-header>
         <md-card-content>
           <blockquote>
-            <md-list-item *ngFor="let listcomment of Dishesnom.comments">
+            <md-list-item *ngFor="let listcomment of dish.comments">
               <dl>
                 <P>&nbsp;
                 <dt md-line>{{listcomment.comment}}</dt>
