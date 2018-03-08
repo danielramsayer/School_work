@@ -3,9 +3,12 @@
    to this file to complete the assignment.  Do not add any CSS
    styling to the original index.htm / start.htm */
 
-link {
-    align-items: center;
-    
+a {
+    position: absolute; right: 50%;
+    text-decoration:  none;
+    background-color: blue;
+    color: white;
+    text-align: center;
 }
 
 body {
