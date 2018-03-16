@@ -7,10 +7,7 @@
 <title>Daniel Rams MD5 Cracker</title></head>
 <body>
 <h1>MD5 cracker</h1>
-<p>This application takes an MD5 hash
-of a two-character lower case string and
-attempts to hash all two-character combinations
-to determine the original two characters.</p>
+<p>This application takes an MD5 hash of a four digit pin and check all 10,000 possible four digit PINs to determine the PIN.</p>
 <pre>
 Debug Output:
 <?php
@@ -19,13 +16,18 @@ $goodtext = "Not found";
 if ( isset($_GET['md5']) ) {
     $time_pre = microtime(true);
     $md5 = $_GET['md5'];
-    // This is our alphabet
-    $txt = "abcdefghijklmnopqrstuvwxyz";
+    // This shows the first 15 in the time
     $show = 15;
     // Outer loop go go through the alphabet for the
     // first position in our "possible" pre-hash
     // text
-    for($i=0; $i<strlen($txt); $i++ ) {
+    $i = 0000;
+    $check = hash('md5', $i);
+    ech $check;
+    /*while ($i < 10000) {
+
+
+
         $ch1 = $txt[$i];   // The first of two characters
         // Our inner loop Not the use of new variables
         // $j and $ch2
@@ -45,7 +47,7 @@ if ( isset($_GET['md5']) ) {
                 print "$check $try\n";
                 $show = $show - 1;
             }
-        }
+        }*/
     }
     // Compute elapsed time
     $time_post = microtime(true);
