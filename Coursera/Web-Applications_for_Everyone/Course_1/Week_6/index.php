@@ -16,18 +16,26 @@ $goodtext = "Not found";
 if ( isset($_GET['md5']) ) {
     $time_pre = microtime(true);
     $md5 = $_GET['md5'];
-    // This shows the first 15 in the time
-    $show = 15;
-    // Outer loop go go through the alphabet for the
-    // first position in our "possible" pre-hash
-    // text
-    $i = 0000;
-    $check = hash('md5', $i);
-    ech $check;
-    /*while ($i < 10000) {
+    $total_checks = 0;
+    $md5_to_check = $md5;
+    $num_to_check = '0000';
+    $pin = false;
+    while ($pin) {
+      $iterable = int($num_to_check);
+      $check = hash('md5', $num_to_check);
+      if ($check === $md5_to_check) {
+        //Awesome
+        global (string)$num_to_check = (int)$num_to_check++;
+        global $goodtext = $num_to_check;
+        global $pin = true;
+        break;
+      } else {
+
+      }
 
 
 
+/*
         $ch1 = $txt[$i];   // The first of two characters
         // Our inner loop Not the use of new variables
         // $j and $ch2
@@ -47,14 +55,16 @@ if ( isset($_GET['md5']) ) {
                 print "$check $try\n";
                 $show = $show - 1;
             }
-        }*/
-    }
+        }
+    }*/
+    print $md5." ".$goodtext."\n";
     // Compute elapsed time
+    $time_pre = 0;
     $time_post = microtime(true);
     print "Elapsed time: ";
-    print $time_post-$time_pre;
+    print $time_post-$time_pre." microseconds";
     print "\n";
-}
+  }
 ?>
 </pre>
 <!-- Use the very short syntax and call htmlentities() -->
@@ -67,6 +77,10 @@ if ( isset($_GET['md5']) ) {
 <li><a href="index.php">Reset</a></li>
 <li><a href="md5.php">MD5 Encoder</a></li>
 <li><a href="makecode.php">MD5 Code Maker</a></li>
+<li><a
+href="https://www.wa4e.com/assn/crack/"
+target="_blank">Specification for this assignment</a></li>
+</ul>
 <li><a
 href="https://github.com/csev/wa4e/tree/master/code/crack"
 target="_blank">Source code for this application</a></li>
