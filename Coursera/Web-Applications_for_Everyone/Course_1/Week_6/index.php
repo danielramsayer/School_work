@@ -17,46 +17,32 @@ if ( isset($_GET['md5']) ) {
     $time_pre = microtime(true);
     $md5 = $_GET['md5'];
     $total_checks = 0;
-    $md5_to_check = $md5;
-    $num_to_check = '0000';
-    $pin = false;
-    while ($pin) {
-      $iterable = int($num_to_check);
+    $num_to_check = "0000";
+    $pin = 1;
+    while ($pin == 1 && $total_checks < 10000) {
       $check = hash('md5', $num_to_check);
-      if ($check === $md5_to_check) {
-        //Awesome
-        global (string)$num_to_check = (int)$num_to_check++;
-        global $goodtext = $num_to_check;
-        global $pin = true;
-        break;
+      $total_checks += 1;
+      if ($check == $md5) {
+        //Awesome!
+        $goodtext = $num_to_check;
+        $pin += 1;
       } else {
-
-      }
-
-
-
-/*
-        $ch1 = $txt[$i];   // The first of two characters
-        // Our inner loop Not the use of new variables
-        // $j and $ch2
-        for($j=0; $j<strlen($txt); $j++ ) {
-            $ch2 = $txt[$j];  // Our second character
-            // Concatenate the two characters together to
-            // form the "possible" pre-hash text
-            $try = $ch1.$ch2;
-            // Run the hash and then check to see if we match
-            $check = hash('md5', $try);
-            if ( $check == $md5 ) {
-                $goodtext = $try;
-                break;   // Exit the inner loop
-            }
-            // Debug output until $show hits 0
-            if ( $show > 0 ) {
-                print "$check $try\n";
-                $show = $show - 1;
-            }
+        if (strlen($total_checks) < 2) {
+          $num_to_check = "000".$total_checks;
+          //print $num_to_check." \n";
+        } elseif (strlen($total_checks) < 3) {
+          $num_to_check = "00".$total_checks;
+          //print $num_to_check." \n";
+        } elseif (strlen($total_checks) < 4) {
+          $num_to_check = "0".$total_checks;
+          //print "Hit's this \n";
+        } elseif (strlen($total_checks) <= 4){
+          $num_to_check = $total_checks;
+          //print "hits this \n";
         }
-    }*/
+        //print "Triggers \n".$num_to_check;
+      }
+    }
     print $md5." ".$goodtext."\n";
     // Compute elapsed time
     $time_pre = 0;
@@ -68,7 +54,7 @@ if ( isset($_GET['md5']) ) {
 ?>
 </pre>
 <!-- Use the very short syntax and call htmlentities() -->
-<p>Original Text: <?= htmlentities($goodtext); ?></p>
+<p>Pin: <?= htmlentities($goodtext); ?></p>
 <form>
 <input type="text" name="md5" size="60" />
 <input type="submit" value="Crack MD5"/>
