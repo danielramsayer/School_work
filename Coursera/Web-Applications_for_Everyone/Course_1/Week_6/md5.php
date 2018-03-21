@@ -7,16 +7,24 @@
 <title>Daniel Rams MD5 PIN Maker</title></head>
 <body>
 <h1>MD5 PIN Maker</h1>
-<p>This application takes an MD5 hash of a four digit pin and check all 10,000 possible four digit PINs to determine the PIN.</p>
+<p>This application translates a 4 pin code into an MD5 hash.</p>
 <pre>
-Debug Output:
 <?php
   $goodtext = "Not found";
+  $md5 = "Not found";
+  if ( isset($_GET['md5']) ) {
+    $md5 = $_GET['md5'];
+    if (strlen($md5) == 4 && is_numeric($md5)) {
+      $goodtext = hash('md5', $md5);
+    } else {
+      $goodtext = "Please enter a 4 digit integer";
+    }
+  }
 
 ?>
 </pre>
 <!-- Use the very short syntax and call htmlentities() -->
-<p>Original Text: <?= htmlentities($goodtext); ?></p>
+<p>Pin: <?= htmlentities($md5." MD5: ".$goodtext);?></p>
 <form>
 <input type="text" name="md5" size="60" />
 <input type="submit" value="Crack MD5"/>
