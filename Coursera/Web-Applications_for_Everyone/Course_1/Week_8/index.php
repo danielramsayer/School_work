@@ -6,9 +6,8 @@
 </head>
 <body>
 <div class="container">
-<h1>Welcome to Broken Rock Paper Scissors</h1>
-<p><strong>Note:</strong> This sample code is only
-partially done and serves only as a starting point for the assignment.
+<h1>Welcome to Rock Paper Scissors</h1>
+<p>
 </p>
 <p>
 <a href="login.php">Please Log In</a>
