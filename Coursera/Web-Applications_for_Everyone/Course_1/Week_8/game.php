@@ -13,7 +13,7 @@ if ( isset($_POST['logout']) ) {
 
 // Set up the values for the game...
 // 0 is Rock, 1 is Paper, and 2 is Scissors
-$names = array('Rock', 'Paper', 'Scissors');
+$names = array(0 : 'Rock', 1 : 'Paper', 3 : 'Scissors');
 $human = isset($_POST["human"]) ? $_POST['human']+0 : -1;
 
 $computer = rand(0,2); // Hard code the computer to rock
