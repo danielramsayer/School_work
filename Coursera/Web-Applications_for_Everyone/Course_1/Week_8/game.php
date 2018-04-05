@@ -13,7 +13,7 @@ if ( isset($_POST['logout']) ) {
 
 // Set up the values for the game...
 // 0 is Rock, 1 is Paper, and 2 is Scissors
-$names = array(0 => 'Rock', 1 => 'Paper', 3 => 'Scissors');
+$names = array(0 => 'Rock', 1 => 'Paper', 2 => 'Scissors');
 $human = isset($_POST["human"]) ? $_POST['human']+0 : -1;
 
 $computer = rand(0,2); // Hard code the computer to rock
@@ -26,11 +26,15 @@ $computer = rand(0,2); // Hard code the computer to rock
 function check($computer, $human) {
     // For now this is a rock-savant checking function
     // TODO: Fix this
-    if ( $human == 0 ) {
+    if ( $human == $computer ) {
         return "Tie";
-    } else if ( $human == 1 ) {
+    } else if ( $human == 1 && $computer == 0 ) {
         return "You Win";
-    } else if ( $human == 2 ) {
+    } else if ( $human == 2 && $computer == 1 ) {
+        return "You Win";
+    } else if ( $human == 0 && $computer == 2 ) {
+        return "You Win";
+    } else {
         return "You Lose";
     }
     return false;
@@ -43,7 +47,7 @@ $result = check($computer, $human);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dr. Chuck's Rock, Paper, Scissors Game</title>
+<title>Daniel's Rock, Paper, Scissors Game</title>
 <?php require_once "bootstrap.php"; ?>
 </head>
 <body>
