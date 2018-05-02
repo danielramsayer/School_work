@@ -10,5 +10,4 @@ export class DishService {
   getDishes(): Dish[] {
     return DISHES;
   }
-
 }
