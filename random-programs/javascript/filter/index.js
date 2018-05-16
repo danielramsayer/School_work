@@ -1,12 +1,22 @@
-<html>
-	<head>
-		<script type="text/javascript" src="caman.full.min.js"></script>
-		<script type="text/javascript" src="index.js"></script>
-	</head>
-	<body>
-		<img id="my-image" src="test-image.png">
-		<br>
-		<button onclick="revertFilter()">Revert</button>
-		<button onclick="applyFilter()">Add Filter</button>
-	</body>
-</html>
+function revertFilter() {
+	Caman('#my-image', function () {
+	    this.revert()
+	  });
+}
+
+function applyFilter() {
+	Caman('#my-image', function () {
+	    this.brightness(10);
+	    this.contrast(30);
+	    this.sepia(60);
+	    this.saturation(-30);
+	    this.render();
+	  });
+}
+
+// function applyFilter() {
+// 	Caman('#my-image', function () {
+// 	    this['vintage']();
+// 	    this.render();
+// 	  });
+// }
