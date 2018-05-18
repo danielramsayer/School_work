@@ -24,9 +24,16 @@ function applySecondFilter() {
 	  });
 }
 
-// function applyFilter() {
-// 	Caman('#my-image', function () {
-// 	    this['vintage']();
-// 	    this.render();
-// 	  });
-// }
+function applyVintageFilter() {
+ 	Caman('#my-image', function () {
+ 	    this['vintage']();
+ 	    this.render();
+ 	  });
+}
+
+function applyVintageFilter() {
+ 	Caman('#my-image', function () {
+ 	    this['lomo']();
+ 	    this.render();
+ 	  });
+}
