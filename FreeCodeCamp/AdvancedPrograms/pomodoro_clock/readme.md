@@ -11,7 +11,7 @@ The graphics for what kind of time it is change based on what session that the t
 
 Here is the code for [Simon](https://github.com/danielramsayer/School_work/tree/master/FreeCodeCamp/AdvancedPrograms/pomodoro_clock).
 
-Here is a CodePen functional version of [the calculator](https://codepen.io/Daniel_Ramsayer/pen/OjpKPX)
+Here is a CodePen functional version of [the Pomodoro Clock](https://codepen.io/Daniel_Ramsayer/pen/OjpKPX)
 
 #### The Result
 
