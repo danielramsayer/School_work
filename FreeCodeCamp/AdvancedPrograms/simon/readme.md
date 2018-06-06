@@ -1,8 +1,8 @@
-### Javascript - Calculator
+### Javascript - Simon Game
 ***
 
 #### Objective
-Create a Simon Says clone with a graphical interface, sounds, and 20 levels of randomly generated color nodes to challenge a player to better short term memory adaptability. Hard and easy variety.
+Create a Simon Game clone with a graphical interface, sounds, and 20 levels of randomly generated color nodes to challenge a player to better short term memory adaptability. Hard and easy variety.
 
 #### Steps Taken
 I created the visual front end with a simple form factor, a start button and a toggle switch for strict and non-strict modes.
