@@ -11,7 +11,7 @@ The back end ties random integers with one of 4 color options, linking sounds to
 
 Here is the code for [Simon](https://github.com/danielramsayer/School_work/tree/master/FreeCodeCamp/AdvancedPrograms/simon).
 
-Here is a CodePen functional version of [the calculator](https://codepen.io/Daniel_Ramsayer/pen/dzawQz)
+Here is a CodePen functional version of [the Simon game](https://codepen.io/Daniel_Ramsayer/pen/dzawQz)
 
 #### The Result
 
