@@ -1,0 +1,27 @@
+img {
+  display: none;
+}
+
+header {
+  background-color: rgb(181, 181, 181);
+}
+
+H1 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a {
+  background: rgb(190, 190, 190);
+  color: black;
+}
+
+section {
+  background-color: rgb(110, 110, 110);
+}
+
+h2 {
+  color: rgb(5, 0, 103);
+  text-transform: uppercase;
+}
