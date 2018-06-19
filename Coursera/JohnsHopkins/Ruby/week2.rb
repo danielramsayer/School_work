@@ -76,3 +76,27 @@ person1 = Person.new("Earnest", 13)
 puts "My age is #{person1.age}"
 person1.age = 145
 puts person1.age
+
+
+#Class Inheretence selection
+
+class Person
+  attr_reader :age
+  attr_accessor :name
+
+  def initialize (name, ageVar) #This is the constructor bit
+    @name = name
+    self.age = ageVar #This will be called in the age= method
+  end
+  def age= (new_age)
+    @age ||= 5
+    @age = new_age unless new_age > 120
+  end
+end
+
+person1 = Person.new("Ricardo", 65)
+puts person1.age
+person1.age = 12
+puts person1.age
+person1.age = 200
+puts person1.age
