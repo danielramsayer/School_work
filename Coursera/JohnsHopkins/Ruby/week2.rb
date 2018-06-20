@@ -141,4 +141,26 @@ match1 = Sports::Match.new
 match1.score = 45; puts match1.score
 
 match2 = Patterns::Match.new
-match2.score = true; puts match2.complete
+match2.complete = true; puts match2.complete
+
+#Module Mixins
+module Saymyname
+  attr_accessor :name
+  def print_name
+    puts "Name: #{name}"
+  end
+end
+
+class Person
+  include Saymyname
+end
+class Company
+  include Saymyname
+end
+
+person1 = Person.new
+person1.name = "Clarence"
+person1.print_name
+company1 = Company.new
+company1.name = "Shinra Industries"
+company1.print_name
