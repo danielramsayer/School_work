@@ -100,3 +100,26 @@ person1.age = 12
 puts person1.age
 person1.age = 200
 puts person1.age
+
+
+#Class invocation
+#@gives you a instance variable and @@ gives a class variable
+
+class MathFunctions
+  def self.double(var)
+    times_called; var * 2;
+  end
+  class << self
+    def times_called
+      @@times_called ||= 0; @@times_called += 1
+    end
+  end
+end
+def MathFunctions.triple(var)
+  times_called; var * 3
+end
+
+#Instance not created
+puts MathFunctions.double(5)
+puts MathFunctions.triple(3)
+puts MathFunctions.times_called
