@@ -123,3 +123,22 @@ end
 puts MathFunctions.double(5)
 puts MathFunctions.triple(3)
 puts MathFunctions.times_called
+
+#Modules in Ruby!
+module Sports
+  class Match
+    attr_accessor :score
+  end
+end
+
+module Patterns
+  class Match
+    attr_accessor :complete
+  end
+end
+
+match1 = Sports::Match.new
+match1.score = 45; puts match1.score
+
+match2 = Patterns::Match.new
+match2.score = true; puts match2.complete
