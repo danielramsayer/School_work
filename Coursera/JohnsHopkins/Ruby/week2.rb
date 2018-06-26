@@ -167,7 +167,7 @@ company1.name = "Shinra Industries"
 company1.print_name
 =end
 
-#Inheretence of ourside Modules
+#Inheretence of ourside Modules, Enumerable in action
 
 class Player
   attr_reader :name, :age, :skill_level
