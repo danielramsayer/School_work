@@ -1,0 +1,16 @@
+Shell Commands
+
+*Echo - meant to repeat whatever was created in the prompt by the user.
+*Echo...!! - Fun one, repeats the prior command from the terminal - ie 'some command' -> 'echo !!' => 'echo some command'.
+*Unusual Behavior - if you experience unusual behavior, you may have hit a reserved word or characters. Try encapsulating with quotes or look up words in the input.
+*ls - lists files and directories in a directory.
+   ls . -list current directory
+   ls ~ -list home directory
+   ls l - list directory contents in the long way. gives additional information like reader/writer status, owner, size, date access... ect.
+   ls -l Folder/*.filetype - this will list all files of a type in a folder.
+   ls word_in_file_name* - this finds all files with a word in the name.
+*cd - moves you through directories, whether up 'cd ThisDirectory' or down ' cd ../..' for two folders down.
+*Dual commands - if you place a ';' in between two commands in a prompt it will execute them in order. 'cd ../ ; ls'.
+*PWD - (Print working directory) if you get off the beaten track this one shows you where you are.
+*mkdir - (Make Directory) creates a folder. This can be a nested folder based on a cd like transversal. Mkdir Documents/Books will create the Books folder in the Documents folder without first having to navigate there. Relative, you must be in a folder in the chain.
+*mv - moves files. Two parts 'Where I want to move from' to 'Where I want to move to'
