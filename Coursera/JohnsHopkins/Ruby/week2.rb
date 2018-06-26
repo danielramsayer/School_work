@@ -144,6 +144,7 @@ match2 = Patterns::Match.new
 match2.complete = true; puts match2.complete
 
 #Module Mixins
+=begin
 module Saymyname
   attr_accessor :name
   def print_name
@@ -164,3 +165,38 @@ person1.print_name
 company1 = Company.new
 company1.name = "Shinra Industries"
 company1.print_name
+=end
+
+#Inheretence of ourside Modules
+
+class Player
+  attr_reader :name, :age, :skill_level
+
+  def initialize (name, age, skill_level)
+    @name = name
+    @age = age
+    @skill_level = skill_level
+  end
+
+  def to_s
+    "<#{name}: #{skill_level}(SL), #{age}(AGE)>"
+  end
+end
+
+class Team
+  include Enumerable
+   attr_accessor :name, :players
+   def initialize (name)
+     @name = name
+     @players = []
+   end
+   def add_players (*players)
+     @players += players
+   end
+   def to_s
+     "#{@name} team: #{@players.join(", ")}"
+   end
+   def each
+     @players.each { |player| yield player}
+   end
+ end
