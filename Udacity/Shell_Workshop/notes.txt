@@ -13,4 +13,11 @@ Shell Commands
 *Dual commands - if you place a ';' in between two commands in a prompt it will execute them in order. 'cd ../ ; ls'.
 *PWD - (Print working directory) if you get off the beaten track this one shows you where you are.
 *mkdir - (Make Directory) creates a folder. This can be a nested folder based on a cd like transversal. Mkdir Documents/Books will create the Books folder in the Documents folder without first having to navigate there. Relative, you must be in a folder in the chain.
-*mv - moves files. Two parts 'Where I want to move from' to 'Where I want to move to'
+*mv - moves files. Two parts 'Where I want to move from' to 'Where I want to move to'. For all file types from one directory for another one would do 'mv Documents/*.pdf Documents/Books' to move all pdfs from one folder to the next.
+*Curl - (See URL) This is a download option for terminal for urls.
+  curl -L - follow any page redirects for a page in case it's moved.
+  curl -o filenameyouwant.fileextensionyouwant -L 'website' downloads the information from the web and places it in a file for you.
+*cat - File reader, this takes a file and spits it right back out.
+*less - like cat, but only reveals a page at a time for easier understanding by the reader.
+rm - remove a file from a place. Ex 'rm 'Bad File' 'Goodface bad file'' or 'rm *'Bad F'*'
+rmdir - remove a folder and files from a directory.
