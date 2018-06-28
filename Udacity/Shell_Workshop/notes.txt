@@ -19,5 +19,16 @@ Shell Commands
   curl -o filenameyouwant.fileextensionyouwant -L 'website' downloads the information from the web and places it in a file for you.
 *cat - File reader, this takes a file and spits it right back out.
 *less - like cat, but only reveals a page at a time for easier understanding by the reader.
-rm - remove a file from a place. Ex 'rm 'Bad File' 'Goodface bad file'' or 'rm *'Bad F'*'
-rmdir - remove a folder and files from a directory.
+*rm - remove a file from a place. Ex 'rm 'Bad File' 'Goodface bad file'' or 'rm *'Bad F'*'
+*rmdir - remove a folder and files from a directory.
+*grep - search command to search files for particular words, such as "grep search_word filename.txt" it will spit out all words with the search_word in it, and the count of the characters in those words. There are certain augmentations that can be done with it such as:
+  less - "grep search_word filename.txt | less" shows you 'pages' of responses.
+  curl - "curl -L website_url | grep search_word"
+  wc - word count option, "grep search_word filename.txt | wc" (-l will count lines at the end)
+  -c - another word count option, just returns a number though "grep -c search_word filename.txt"
+*Shell Variable - a code word native to the shell, accessed with '$', such as '$LINES'.
+*$PATH - tells you where your programs are.
+*PWD - pathway to current location
+*(.bash_profile) - File that does some terminal or shell set up configuration.
+*$PS1 - tied with .bash_profile, that controls the command prompt in the shell.
+*alias - this sets variables, so any above command you can give an alias to and for that shells existence the alias works. Permenant alias's should be in the .bash file.
