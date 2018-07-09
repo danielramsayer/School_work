@@ -22,10 +22,18 @@ function loadData() {
     let streetImgUrl = "https://maps.googleapis.com/maps/api/streetview?size=650x450&location=" + address;
     $body.append('<img class="bgimg" src="' + streetImgUrl + '">')
     // YOUR CODE GOES HERE!
-
-    let URL = "https://www.nytimes.com/search?query=" + cityvar; console.log(URL);
-    $.getJSON(URL, function( data ) {
-      
+    //NY times Ajax request section
+    let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+      url += '?' + $.param({
+        'api-key': "013af341e43040f7b88afa06cbe1d12a"
+      });
+      $.ajax({
+        url: url,
+        method: 'GET',
+      }).done(function(result) {
+        console.log(result);
+      }).fail(function(err) {
+        throw err;
     });
 
     return false;
