@@ -11,7 +11,7 @@ function loadData() {
     $wikiElem.text("");
     $nytElem.text("");
 
-    // load streetview
+    // load google streetview
     let streetvar = $('#street').val();
     console.log(streetvar)
     let cityvar = $('#city').val();
@@ -21,21 +21,22 @@ function loadData() {
 
     let streetImgUrl = "https://maps.googleapis.com/maps/api/streetview?size=650x450&location=" + address;
     $body.append('<img class="bgimg" src="' + streetImgUrl + '">')
-    // YOUR CODE GOES HERE!
+
     //NY times Ajax request section
     let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
       url += '?' + $.param({
         'api-key': "013af341e43040f7b88afa06cbe1d12a"
+        'q' = cityvar;
       });
       $.ajax({
         url: url,
         method: 'GET',
       }).done(function(result) {
         console.log(result);
+        document.getElementById("headline").innerHTML = result.response.docs("0").nytimes-header.main;
       }).fail(function(err) {
         throw err;
-    });
-
+      });
     return false;
 };
 
