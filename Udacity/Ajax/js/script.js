@@ -25,16 +25,7 @@ function loadData() {
 
     let URL = "https://www.nytimes.com/search?query=" + cityvar; console.log(URL);
     $.getJSON(URL, function( data ) {
-
-      /*let items = [];
-      $.each( data, function( key, val ) {
-        items.push( "<li id='" + key + "'>" + val + "</li>" );
-      });
-
-      $( "<ul/>", {
-        "class": "my-new-list",
-        html: items.join( "" )
-      }).appendTo( "body" );*/
+      
     });
 
     return false;
