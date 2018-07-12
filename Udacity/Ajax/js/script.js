@@ -23,20 +23,19 @@ function loadData() {
     $body.append('<img class="bgimg" src="' + streetImgUrl + '">')
 
     //NY times Ajax request section
-    let url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-      url += '?' + $.param({
-        'api-key': "013af341e43040f7b88afa06cbe1d12a"
-        'q' = cityvar;
-      });
-      $.ajax({
-        url: url,
-        method: 'GET',
-      }).done(function(result) {
-        console.log(result);
-        document.getElementById("headline").innerHTML = result.response.docs("0").nytimes-header.main;
-      }).fail(function(err) {
-        throw err;
-      });
+    let nytimesurl = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q" + cityvar + "&sort=newest&api-key=013af341e43040f7b88afa06cbe1d12a";
+    $.getJSON(nytimesurl, function(data){
+      $nytHeaderElem.text('New York Times Articles Containing ' + cityvar);
+
+      let articlesbreakout = data.response.docs;
+      console.log(articlesbreakout);
+      for (let i = 0; i < articlesbreakout.length; i++) {
+        articleShown = articlesbreakout[i];
+        $nytElem.append('<li class="article">'+
+          '<a href="'+articleShown.web_url+'">'+articlesbreakout.headline + '</a>'+ '<p>'+articlesbreakout.snippet + '</p>' + 
+        '</li>');
+      };
+    })
     return false;
 };
 
