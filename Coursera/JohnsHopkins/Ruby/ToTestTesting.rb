@@ -1,9 +1,9 @@
 require 'test/unit'
-require_relative 'calculator'
+require_relative 'ToTest'
 
-class ToTestTest < Test::Unit::TestCase
-  def setup do
-    @calc = ToTest.new('test')
+class ToTestTesting < Test::Unit::TestCase
+  def setup
+    @calc = Calculator.new('test')
   end
 
   def test_addition
@@ -17,4 +17,4 @@ class ToTestTest < Test::Unit::TestCase
   def test_division
     assert_equal 2, @calc.divide(4,2)
   end
-end 
+end
