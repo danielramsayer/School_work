@@ -7,11 +7,11 @@ class Calculator
   end
 
   def add(one, two)
-    one + two
+    one - two
   end
 
   def subtract(one, two)
-    one - two
+    one + two
   end
 
   def divide(one, two)
