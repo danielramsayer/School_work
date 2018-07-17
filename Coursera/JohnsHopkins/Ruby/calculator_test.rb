@@ -1,7 +1,7 @@
 require 'test/unit'
-require_relative 'ToTest'
+require_relative 'calculator'
 
-class ToTestTesting < Test::Unit::TestCase
+class CalculatorTesting < Test::Unit::TestCase
   def setup
     @calc = Calculator.new('test')
   end
