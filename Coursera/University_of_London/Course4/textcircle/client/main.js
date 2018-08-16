@@ -2,8 +2,8 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
-
-/*Template.greeting.onCreated(function greetingOnCreated() {
+/*
+Template.greeting.onCreated(function greetingOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);
 });
