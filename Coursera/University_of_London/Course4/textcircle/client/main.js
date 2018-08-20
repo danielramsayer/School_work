@@ -1,25 +1,17 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
-import { Mongo } from 'meteor/mongo';
+
 import './main.html';
 
-const Documents = new Mongo.Collection("documents");
+this.Documents = new Mongo.Collection("documents");
 console.log(Documents);
 
-if (!Meteor.isServer) {
-  console.log("Meteor is not the server");
-}
+Meteor.startup(function() {
+  if (!Documents.findOne()){
+    Documents._collection.insert({title:"My new document!"});
+  }
+});
 
-if (Meteor.isServer) {
-  console.log("Server is running");
-  Meteor.startup(function () {
-    console.log("startup is running");
-    if (!Documents.findOne()){
-      console.log("findone exists");
-      Documents.insert({title:"My new document"});
-    }
-  });
-}
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
