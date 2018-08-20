@@ -1,9 +1,9 @@
 import assert from "assert";
 
-describe("textcircle", function () {
+describe("TextCircle", function () {
   it("package.json has correct name", async function () {
     const { name } = await import("../package.json");
-    assert.strictEqual(name, "textcircle");
+    assert.strictEqual(name, "TextCircle");
   });
 
   if (Meteor.isClient) {
