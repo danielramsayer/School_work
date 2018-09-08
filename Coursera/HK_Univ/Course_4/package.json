@@ -1,0 +1,14 @@
+{
+  "name": "course_4",
+  "version": "1.0.0",
+  "description": "This is a test directory in order to facilitate the learning of git and Node",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Rams",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
