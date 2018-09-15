@@ -4,7 +4,9 @@
   "description": "This is a test directory in order to facilitate the learning of git and Node",
   "main": "index.html",
   "scripts": {
+    "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1"
+    "lite":"lite-server"
   },
   "author": "Daniel Rams",
   "license": "ISC",
