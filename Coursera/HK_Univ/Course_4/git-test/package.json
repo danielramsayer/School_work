@@ -1,8 +1,10 @@
 {
   "name": "git-test",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "author":"Daniel Rams",
+  "licence":"ISC",
+  "description":"Testing ground for React and Redux",
   "dependencies": {
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
