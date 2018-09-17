@@ -5,5 +5,7 @@ body {
 }
 
 .App-intro {
-  color: blue;
+  color: green;
+  width: 50%;
+  margin: auto;
 }
