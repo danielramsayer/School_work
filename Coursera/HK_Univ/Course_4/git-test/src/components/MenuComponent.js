@@ -48,7 +48,7 @@ class Menu extends Component {
         <div key={dish.id} className="col-12 mt-3">
           <Media tag="li">
             <Media right>
-              <Media object src={dish.image} alt={dish.name} />
+              <Media object src={dish.image} alt={dish.name} id="this"/>
             </Media>
             <Media body className="ml-5">
               <Media heading>{dish.name}</Media>
