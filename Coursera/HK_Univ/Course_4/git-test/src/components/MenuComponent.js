@@ -21,6 +21,7 @@ class Menu extends Component {
           <CardBody>
             <CardTitle>{dish.name}</CardTitle>
             <CardText>{dish.description}</CardText>
+            <CardText align="right">${dish.price}</CardText>
           </CardBody>
         </Card>
       );
