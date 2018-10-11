@@ -3,6 +3,7 @@
 }
 
 .App-logo {
+  text-align: left;
   animation: App-logo-spin infinite 20s linear;
   height: 15vmin;
 }
