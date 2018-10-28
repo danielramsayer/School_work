@@ -9,8 +9,6 @@ function flashlight(position){
 document.addEventListener('mousemove',flashlight)
 document.addEventListener('touchmove',flashlight)
 
-
-
 function jumpScare() {
   let size = 0;
   let angle1 = 0;
@@ -23,12 +21,7 @@ function jumpScare() {
     document.getElementById("myImg").style.transform = "rotate("+ angle1 + "deg)";
     document.getElementById("myImg").height = height1;
     document.getElementById("myImg").width = width1;
-    
   }
-}
-
-var x = document.getElementById("myAudio");
-
-function playAudio() {
-    x.play();
+  var snd = new Audio("wickedwitchlaugh.mp3");
+  snd.play();
 }
