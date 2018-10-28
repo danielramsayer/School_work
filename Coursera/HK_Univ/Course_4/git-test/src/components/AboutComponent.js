@@ -19,7 +19,7 @@ function About(props) {
       return (
         <Media className="m-5">
           <Media>
-            <Media src={eachProfile.image} alt={eachProfile.name}/>
+            <Media className="mr-3" src={eachProfile.image} alt={eachProfile.name}/>
           </Media>
           <Media body="body">
             <Media heading="heading">
