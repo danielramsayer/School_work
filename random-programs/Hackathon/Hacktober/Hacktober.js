@@ -16,8 +16,8 @@ function jumpScare() {
   let width1 = 0;
   while (angle1 < 340) {
     angle1 += 20;
-    height1 += 150;
-    width1 += 150;
+    height1 += 100;
+    width1 += 100;
     document.getElementById("myImg").style.transform = "rotate("+ angle1 + "deg)";
     document.getElementById("myImg").height = height1;
     document.getElementById("myImg").width = width1;

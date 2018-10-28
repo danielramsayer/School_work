@@ -1,5 +1,9 @@
-
-
+#quote {
+  color: transparent;
+  text-shadow: 0 0 1px rgba(0,0,0,1);
+  font-style: italic;
+  font-size: 2em;
+}
 
 :root:before {
   display: block;
@@ -24,6 +28,6 @@
 
 #myImg {
   position: fixed;
-  top: -60%;
+  top: 0%;
   left: -40%;
 }
