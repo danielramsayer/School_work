@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom'
   function RenderDish({dish}) {
     if (dish!=null) {
       return (
-          <Card>
-            <CardImg width="50%" src={dish.image} alt={dish.name} />
-            <CardBody>
-              <CardTitle>{dish.name}</CardTitle>
-              <CardText>{dish.description}</CardText>
-              <CardText align="right">${dish.price}</CardText>
-            </CardBody>
-          </Card>
+        <Card>
+          <CardImg width="50%" src={dish.image} alt={dish.name} />
+          <CardBody>
+            <CardTitle>{dish.name}</CardTitle>
+            <CardText>{dish.description}</CardText>
+            <CardText align="right">${dish.price}</CardText>
+          </CardBody>
+        </Card>
       );
     } else {
       return (
@@ -65,7 +65,5 @@ import { Link } from 'react-router-dom'
       return (<div></div>);
     }
   }
-
-
 
 export default DishDetail;
