@@ -12,7 +12,6 @@ import {
 import {Link} from 'react-router-dom';
 
 function About(props) {
-
   function RenderLeaders ({profile}) {
     const profileListing = profile.map((eachProfile) => {
       return (
