@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { CLIENTS } from 'json!../test_stuff/MOCK_DATA';
+import { CLIENTS } from './test_stuff/test_data';
+import ReadDataIntoBrowser from './components/ReadDataIntoBrowser';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clients: CLIENTS,
+    };
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <p>This thing</p>
+        <ReadDataIntoBrowser data={this.state.clients}/>
       </div>
     );
   }
