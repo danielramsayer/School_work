@@ -18,7 +18,7 @@ Here is a CodePen functional version of [Wikipedia Search](https://codepen.io/Da
 
 The wikipedia search provides the intended results, while providing a visually engaging background that is along the lines of what one would expect for wikipedia API integration.
 
-![alt text](https://github.com/danielramsayer/School_work/blob/master/FreeCodeCamp/AdvancedPrograms/calculator/g1.png "calculator image")
+![alt text](https://github.com/danielramsayer/School_work/blob/master/FreeCodeCamp/IntermediatePrograms/WikipediaSearch/WS.png "WikipediaSearch image")
 
 
 [Return to portfolio](https://github.com/danielramsayer/Portfolio)
