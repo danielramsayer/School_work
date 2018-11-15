@@ -11,10 +11,16 @@ class App extends Component {
   }
 
   render() {
+    const Tester = props => {
+      console.log(props.thing);
+      return (<h1>{props.thing}</h1>);
+    }
+    //let Rall = "This other thing!";
     return (
       <div>
         <p>This thing</p>
-        <ReadDataIntoBrowser data={this.state.clients}/>
+          <ReadDataIntoBrowser data={this.state.clients}/>
+          <Tester thing="This additional thing!"/>
       </div>
     );
   }
