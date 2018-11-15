@@ -8,7 +8,7 @@ class MyApp extends React.Component {
   render() {
     return (
        <div>
-         <Navbar name={this.state.name}/>
+         <Navbar name1={this.state.name}/>
        </div>
     );
   }
@@ -21,7 +21,7 @@ class Navbar extends React.Component {
   render() {
     return (
     <div>
-      <h1>Hello, my name is: {this.props.name}</h1>
+      <h1>Hello, my name is: {this.props.name1}</h1>
     </div>
     );
   }
