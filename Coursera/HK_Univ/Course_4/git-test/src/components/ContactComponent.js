@@ -10,6 +10,13 @@ import {
 import {Link} from 'react-router-dom';
 import {Control, LocalForm, Errors} from 'react-redux-form';
 
+//Validation requirements
+const required = (val) => val && val.length;
+const maxLength = (len) => !(val) || (val.length <= len);
+const minLength = (len) => (val) && (val.length >= len);
+const isNumber = (val) => !isNaN(Number(val));
+const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -77,13 +84,40 @@ class Contact extends Component {
             <Row className="form-group">
               <Label htmlFor="firstname" md={2}>First Name</Label>
               <Col md={10}>
-                <Control.text model=".firstname" id="firstname" name="firstname" placeholder="First Name" className="form-control"/>
+                <Control.text model=".firstname" id="firstname" name="firstname" placeholder="First Name" className="form-control"
+                validators={{
+                  required, minLength:minLength(3), maxLength(20),
+                  }}
+                />
+                <Errors
+                  className="text-danger"
+                  model=".firstname"
+                  show="touched"
+                  messages={{
+                    required: "Required",
+                    minLength: "Must be greater than 2 characters in lenth",
+                    maxLength: "Must be less than 20 characters in length"
+                  }}
+                />
               </Col>
             </Row>
             <Row className="form-group">
               <Label htmlFor="lastname" md={2}>Last Name</Label>
               <Col md={10}>
-                <Control.text model=".lastname" id="lastname" name="lastname" placeholder="Last Name" className="form-control"/>
+                <Control.text model=".lastname" id="lastname" name="lastname" placeholder="Last Name" className="form-control"
+                validators={{
+                  required, minLength:minLength(3), maxLength(20),
+                  }}
+                />
+                <Errors
+                  className="text-danger"
+                  model=".firstname"
+                  show="touched"
+                  messages={{
+                    required: "Required",
+                    minLength: "Must be greater than 2 characters in lenth",
+                    maxLength: "Must be less than 20 characters in length"
+                  }}/>
               </Col>
             </Row>
             <Row className="form-group">
