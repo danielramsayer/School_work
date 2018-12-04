@@ -5,11 +5,20 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { combineReducers, createStore } from 'redux';
 
-function productsReducer(state =[], actions) {
-  return 'State';
+function productsReducer(state =[], action) {
+  return state;
 }
 
-const store = createStore(reducer);
+function userReducer(state = "", action) {
+  return state;
+}
+
+const allReducers = combineReducers({
+  products: productsReducer,
+  users: userReducer
+});
+
+const store = createStore(allReducers);
 
 console.log(store.getState())
 
