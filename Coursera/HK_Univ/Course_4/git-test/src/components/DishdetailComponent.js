@@ -33,6 +33,17 @@ import { Link } from 'react-router-dom'
     return commentListing;
   }
 
+  function commentModal() {
+    console.log("triggered");
+    return (
+      <div className="modal" id="commentModal">
+        <div className="modal-dialog">
+          <div className="modal-content"></div>
+        </div>
+      </div>
+    )
+  }
+
   const DishDetail = (props) => {
     if(props.dish != null){
       return (
@@ -56,6 +67,10 @@ import { Link } from 'react-router-dom'
               <h2>Comments</h2>
               <RenderComments comments={props.comments} />
             </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal" onclick="commentModal()">
+
+              Submit Comment
+            </button>
           </div>
         </div>
       </div>
