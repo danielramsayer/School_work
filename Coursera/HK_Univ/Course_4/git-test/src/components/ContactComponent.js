@@ -67,7 +67,7 @@ class Contact extends Component {
             <a role="button" className="btn btn-primary" href="tel:+85212345678">
               <i className="fa fa-phone"></i>
               Call</a>
-            <a role="button" className="btn btn-info">
+            <a role="button" className="btn btn-info" href="tel:+85212345678">
               <i className="fa fa-skype"></i>
               Skype</a>
             <a role="button" className="btn btn-success" href="mailto:confusion@food.net">
