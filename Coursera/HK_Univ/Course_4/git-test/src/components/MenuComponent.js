@@ -10,7 +10,6 @@ import {
 import {Link} from 'react-router-dom';
 
 function RenderMenuItem({dish, onClick}) {
-  console.log(dish);
   return (
     <Card>
       <Link to={`/menu/${dish.id}`}>
