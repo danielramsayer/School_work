@@ -27,6 +27,7 @@ class CommentModal extends Component {
       isModalOpen: false
     };
     this.toggleModal = this.toggleModal.bind(this);
+    this.handleComment = this.handleComment.bind(this);
   }
 
   toggleModal() {
@@ -36,27 +37,24 @@ class CommentModal extends Component {
   }
 
   handleComment(event) {
-    this.toggleModal();
-    alert("Username: " + this.username.value + " Password: " + this.password.value
-        + " Remember: " + this.remember.checked);
-    event.preventDefault();
+    alert('Current State is: ' + JSON.stringify(event));
   }
 
   render() {
     return(
       <div>
-        <Button type="button" className="btn btn-primary btn-md"   onClick={this.toggleModal}>
+        <Button type="button" color="primary"   onClick={this.toggleModal}>
             <i className="fa fa-pencil fa-lg"> Submit Review</i>
         </Button>
         <React.Fragment>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal} /*Having this in the modal and in the header makes the X button!*/> Submit Comment </ModalHeader>
             <ModalBody>
-              <LocalForm>
+              <LocalForm onSubmit={(values) => this.handleComment(values)}>
                 <Row className="form-group">
                   <Label htmlFor="rating" md={2}>Rating</Label>
                   <Col md={10}>
-                    <Control.select model=".rating" id="rating" name="rating" className="form-control">
+                    <Control.select model=".rating" id="rating" name="rating" placeholder="Rating" className="form-control">
                       <option value="5">5</option>
                       <option value="4">4</option>
                       <option value="3">3</option>
@@ -86,12 +84,12 @@ class CommentModal extends Component {
                     <Control.textarea rows="6" model=".comment" id="comment" name="comment" placeholder="Comment" className="form-control" validators={{
                         required,
                         minLength: minLength(3),
-                        maxLength: maxLength(15)
+                        maxLength: maxLength(225)
                       }}/>
                     <Errors className="text-danger" model=".comment" show="touched" messages={{
                         required: 'Required',
                         minLength: 'Must be greater than 2 characters',
-                        maxLength: 'Must be 15 characters or less'
+                        maxLength: 'Must be 225 characters or less'
                       }}/>
                   </Col>
                 </Row>
