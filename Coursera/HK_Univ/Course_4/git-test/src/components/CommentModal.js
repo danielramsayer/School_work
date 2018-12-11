@@ -1,18 +1,13 @@
 import React, {Component} from 'react';
 import {
-  Collapse,
   Button,
   Modal,
   ModalHeader,
   ModalBody,
-  Form,
-  FormGroup,
   Label,
   Row,
-  Col,
-  Input
+  Col
 } from 'reactstrap';
-import {Link} from 'react-router-dom';
 import {Control, LocalForm, Errors} from 'react-redux-form';
 
 //Validation logic
