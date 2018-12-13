@@ -32,7 +32,7 @@ class CommentModal extends Component {
   }
 
   handleComment(event) {
-    alert('Current State is: ' + JSON.stringify(event));
+    this.props.addComment(this.props.dishId, event.rating, event.author, event.comment);
   }
 
   render() {
