@@ -81,7 +81,7 @@ const DishDetail = (props) => {
           <div className="col-12 col-lg-7 m-1">
             <h2>Comments</h2>
             <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}/>
-            <CommentModal dishId={dishId} addComment={addComment}/>
+            <CommentForm dishId={dishId} addComment={addComment}/>
           </div>
         </div>
       </div>
@@ -92,7 +92,7 @@ const DishDetail = (props) => {
 }
 
 
-class CommentModal extends Component {
+class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
