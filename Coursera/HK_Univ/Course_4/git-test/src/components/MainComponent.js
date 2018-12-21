@@ -6,8 +6,9 @@ import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
-import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addComment } from '../redux/ActionCreators';
 
 class Main extends Component {
   constructor(props) {
