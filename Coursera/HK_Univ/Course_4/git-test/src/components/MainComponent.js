@@ -10,18 +10,22 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addComment } from '../redux/ActionCreators';
 
+const MapStatetoProps = state => {
+  return {
+    dishes: state.dishes,
+    comments: state.comments,
+    promotions: state.promotions,
+    leaders: state.leaders
+  }
+}
+
+const mapDispatchToProps = dispatch => ({
+  addComment: (dishId, rating, author, comment) => dispatch(addComment(dishId, rating, author, comment))
+});
+
 class Main extends Component {
   constructor(props) {
     super(props);
-  }
-
-  const MapStatetoProps = state => {
-    return {
-      dishes: state.dishes,
-      comments: state.comments,
-      promotions: state.promotions,
-      leaders: state.leaders
-    }
   }
 
   render() {
@@ -47,7 +51,7 @@ class Main extends Component {
         <Switch>
           <Route path='/home' component={HomePage}/>
           <Route exact path='/aboutus' component={() => <About leaders={this.props.leaders}/>}/>
-          <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes}/>}/>
+          <Route exact path='/menu' component={() => <Menu dishes={this.props.dishes}/>}/>
           <Route exact path='/contactus' component={Contact}/>
           <Route path='/menu/:dishId' component={DishWithId} />
           <Redirect to="/home"/>
