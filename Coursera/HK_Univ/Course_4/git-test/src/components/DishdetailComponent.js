@@ -81,7 +81,7 @@ const DishDetail = (props) => {
           <div className="col-12 col-lg-7 m-1">
             <h2>Comments</h2>
             <RenderComments comments={props.comments} addComment={props.addComment} dishId={props.dish.id}/>
-            <CommentForm dishId={props.dishId} addComment={props.addComment}/>
+            <CommentForm dishId={props.dish.id} addComment={props.addComment}/>
           </div>
         </div>
       </div>
@@ -110,7 +110,7 @@ class CommentForm extends Component {
   handleComment(event) {
     alert('Current State is: ' + JSON.stringify(event));
     this.toggleModal();
-    this.props.addComment(this.props.dishId, event.rating, event.author, event.comment);
+    this.props.addComment(this.props.dishId, event.rating, event.name, event.comment);
   }
 
   render() {
