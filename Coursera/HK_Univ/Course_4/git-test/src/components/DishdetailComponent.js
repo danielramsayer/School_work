@@ -91,7 +91,6 @@ const DishDetail = (props) => {
   }
 }
 
-
 class CommentForm extends Component {
   constructor(props) {
     super(props);
@@ -109,6 +108,7 @@ class CommentForm extends Component {
   }
 
   handleComment(event) {
+    alert('Current State is: ' + JSON.stringify(event));
     this.toggleModal();
     this.props.addComment(this.props.dishId, event.rating, event.author, event.comment);
   }
