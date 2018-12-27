@@ -123,7 +123,7 @@ class CommentForm extends Component {
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
           <ModalHeader toggle={this.toggleModal} /*Having this in the modal and in the header makes the X button!*/> Submit Comment </ModalHeader>
             <ModalBody>
-              <LocalForm onSubmit={(values) => this.handleComment(values)}>
+              <LocalForm onSubmit={(event) => this.handleComment(event)}>
                 <Row className="form-group">
                   <Label htmlFor="rating" md={2}>Rating</Label>
                   <Col md={10}>
