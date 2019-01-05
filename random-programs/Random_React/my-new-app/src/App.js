@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { CLIENTS } from './test_stuff/test_data';
 import ReadDataIntoBrowser from './components/ReadDataIntoBrowser';
+import Posts from './components/posts';
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class App extends Component {
     //let Rall = "This other thing!";
     return (
       <div>
-        <p>This thing</p>
+        <h1>Welcome to the Show</h1>
+          <Posts />
           <ReadDataIntoBrowser data={this.state.clients}/>
           <Tester thing="This additional thing!"/>
       </div>
