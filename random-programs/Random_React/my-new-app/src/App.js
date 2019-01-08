@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { CLIENTS } from './test_stuff/test_data';
 import ReadDataIntoBrowser from './components/ReadDataIntoBrowser';
 import Posts from './components/posts';
+import postForms from './components/postForms';
 
 class App extends Component {
   constructor(props) {
