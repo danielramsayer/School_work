@@ -3,7 +3,10 @@ import React, { Component } from 'react';
 class PostForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      title: "",
+      body: ""
+    };
   }
 
 
@@ -16,12 +19,12 @@ class PostForm extends Component {
         <form>
           <div>
             <label>Title: </label><br />
-            <input type="text" name="title" />
+            <input type="text" name="title" value={this.state.title}/>
           </div>
           <br />
           <div>
             <label>Body: </label><br />
-            <textarea name="body"/>
+            <textarea name="body" value={this.state.body}/>
           </div>
           <br />
           <button type="submit">Submit</button>
