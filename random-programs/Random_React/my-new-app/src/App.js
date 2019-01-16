@@ -3,6 +3,7 @@ import { CLIENTS } from './test_stuff/test_data';
 import ReadDataIntoBrowser from './components/ReadDataIntoBrowser';
 import Posts from './components/posts';
 import PostForm from './components/postForm';
+import mongoose from 'mongoose';
 
 class App extends Component {
   constructor(props) {
