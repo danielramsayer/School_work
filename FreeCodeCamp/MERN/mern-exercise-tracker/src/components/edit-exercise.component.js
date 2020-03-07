@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { CheckAndRun } from "./checkAndRun";
 
 export default class EditExercise extends Component {
   constructor(props) {
@@ -101,6 +102,7 @@ export default class EditExercise extends Component {
     return (
       <div>
         <h3>Edit Exercise Log</h3>
+        <CheckAndRun />
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Username: </label>

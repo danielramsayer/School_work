@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import checkAndRun from "./checkAndRun";
 
 export default class Navbar extends Component {
   render() {
@@ -15,7 +16,6 @@ export default class Navbar extends Component {
                 Exercises
               </Link>
             </li>
-
             <li className="navbar-item">
               <Link to="/edit/:id" className="nav-link">
                 Edit Exercise
@@ -30,6 +30,9 @@ export default class Navbar extends Component {
               <Link to="/user" className="nav-link">
                 Create User
               </Link>
+            </li>
+            <li>
+              <checkAndRun />
             </li>
           </ul>
         </div>
