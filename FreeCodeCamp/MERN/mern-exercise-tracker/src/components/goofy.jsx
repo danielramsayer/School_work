@@ -18,7 +18,7 @@ export default class Goofy extends Component {
         <h3>Goofy stuff</h3>
         {/* <CheckAndRun /> */}
         <App1 />
-        <Joken />
+        {/* <Joken /> */}
         {/*<Products /> */}
         {/* <Checker /> */}
       </div>

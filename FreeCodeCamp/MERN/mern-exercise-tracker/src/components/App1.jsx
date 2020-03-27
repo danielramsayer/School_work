@@ -6,10 +6,12 @@ class App1 extends React.Component {
   render() {
     return (
       <div>
-        <Header username="Josephine" /> <Greeting />
-        <Header1 />
-        <Testing1 />
-        <LoggedIn />
+        {/* <Header username="Josephine" /> <Greeting /> */}
+        {/* <Header1 /> */}
+        {/* <Testing1 /> */}
+        {/* <LoggedIn /> */}
+        {/* <Image /> */}
+        <Counter />
       </div>
     );
   }
@@ -68,7 +70,6 @@ function Child(props) {
     </div>
   );
 }
-
 class Testing1 extends Component {
   constructor() {
     super();
@@ -99,6 +100,57 @@ class LoggedIn extends Component {
       <div>
         The user is:{" "}
         {this.state.logged ? <div>Logged In!</div> : <div>Logged out!</div>}
+      </div>
+    );
+  }
+}
+
+class Image extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+    return (
+      <img
+        src="https://www.fillmurray.com/200/100"
+        onMouseEnter={() => console.log("This is Bill Murray!")}
+      />
+    );
+  }
+}
+
+class Counter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+    this.handleClick1 = this.handleClick1.bind(this);
+    this.handleClick2 = this.handleClick2.bind(this);
+  }
+
+  handleClick1() {
+    this.setState(prevState => {
+      return {
+        count: prevState.count + 1
+      };
+    });
+  }
+  handleClick2() {
+    this.setState(prevState => {
+      return {
+        count: prevState.count - 1
+      };
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Count is:</h2>
+        <h1>{this.state.count}</h1>
+        <button onClick={this.handleClick1}>Increase!</button>
+        <button onClick={this.handleClick2}>Decrease!</button>
       </div>
     );
   }
