@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDom from "react-dom";
 import "./checkAndRun.scss";
+import Checker from "./checker";
 
 class App1 extends React.Component {
   render() {
@@ -11,7 +12,8 @@ class App1 extends React.Component {
         {/* <Testing1 /> */}
         {/* <LoggedIn /> */}
         {/* <Image /> */}
-        <Counter />
+        {/* <Counter /> */}
+        <Checker />
       </div>
     );
   }
