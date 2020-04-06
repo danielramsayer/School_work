@@ -13,7 +13,8 @@ class App1 extends React.Component {
         {/* <LoggedIn /> */}
         {/* <Image /> */}
         {/* <Counter /> */}
-        <Checker />
+        {/* <Checker /> */}
+        <Timer />
       </div>
     );
   }
@@ -138,6 +139,7 @@ class Counter extends Component {
       };
     });
   }
+
   handleClick2() {
     this.setState(prevState => {
       return {
@@ -153,6 +155,39 @@ class Counter extends Component {
         <h1>{this.state.count}</h1>
         <button onClick={this.handleClick1}>Increase!</button>
         <button onClick={this.handleClick2}>Decrease!</button>
+      </div>
+    );
+  }
+}
+
+function Conditional(props) {
+  if (props.isLoading === true) {
+    return <h1>Loading....</h1>;
+  } else {
+    return <h1>Here is some really cool stuff.</h1>;
+  }
+}
+
+class Timer extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isLoading: false
+      });
+    }, 1500);
+  }
+
+  render() {
+    return (
+      <div>
+        <Conditional isLoading={this.state.isLoading} />
       </div>
     );
   }
