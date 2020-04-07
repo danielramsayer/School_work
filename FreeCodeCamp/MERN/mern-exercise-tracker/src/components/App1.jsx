@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import ReactDom from "react-dom";
 import "./checkAndRun.scss";
+import CheckAndRun from "./checkAndRun";
+import Joke, { Joke1 } from "./jokes";
+import Joken from "./inherit.js";
+import Products from "./products";
 import Checker from "./checker";
 
 class App1 extends React.Component {
@@ -10,6 +14,9 @@ class App1 extends React.Component {
         {/* <Header username="Josephine" /> <Greeting /> */}
         {/* <Header1 /> */}
         {/* <Testing1 /> */}
+        {/* <CheckAndRun /> */}
+        {/* <Joken /> */}
+        {/* <Products /> */}
         {/* <LoggedIn /> */}
         {/* <Image /> */}
         {/* <Counter /> */}
@@ -161,11 +168,7 @@ class Counter extends Component {
 }
 
 function Conditional(props) {
-  if (props.isLoading === true) {
-    return <h1>Loading....</h1>;
-  } else {
-    return <h1>Here is some really cool stuff.</h1>;
-  }
+  return <div>Here is some really cool stuff.</div>;
 }
 
 class Timer extends Component {
@@ -187,7 +190,7 @@ class Timer extends Component {
   render() {
     return (
       <div>
-        <Conditional isLoading={this.state.isLoading} />
+        {this.state.isLoading ? <div>Loading...</div> : <Conditional />}
       </div>
     );
   }
