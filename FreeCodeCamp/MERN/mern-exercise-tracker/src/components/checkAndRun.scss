@@ -9,3 +9,15 @@
 .night {
   color: purple;
 }
+
+.todo-item {
+  div {
+    display: inline;
+  }
+}
+
+.checked {
+  color: grey;
+  font-style: italic;
+  text-decoration: line-through;
+}

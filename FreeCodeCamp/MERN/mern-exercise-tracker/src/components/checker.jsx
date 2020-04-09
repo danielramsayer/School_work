@@ -1,16 +1,22 @@
 import React from "react";
 import ReactDom from "react-dom";
 import todosData from "./todosData";
+import "./checkAndRun.scss";
 
 function TodoItem(props) {
+  let checked;
   return (
     <div className="todo-item">
       <input
         type="checkbox"
         checked={props.item.completed}
         onChange={() => props.handleChange(props.item.id)}
-      />
-      <p>{props.item.text}</p>
+      />{" "}
+      {props.item.completed ? (
+        <div className="checked">{props.item.text}</div>
+      ) : (
+        <div>{props.item.text}</div>
+      )}
     </div>
   );
 }

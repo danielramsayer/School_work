@@ -21,7 +21,9 @@ class App1 extends React.Component {
         {/* <Image /> */}
         {/* <Counter /> */}
         {/* <Checker /> */}
-        <Timer />
+        {/* <Timer /> */}
+        {/* <LogStatus /> */}
+        <ApiCall />
       </div>
     );
   }
@@ -193,5 +195,43 @@ class Timer extends Component {
         {this.state.isLoading ? <div>Loading...</div> : <Conditional />}
       </div>
     );
+  }
+}
+
+class LogStatus extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loggedIn: true
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      loggedIn: !prevState.loggedIn
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        You are:{" "}
+        <button onClick={this.handleClick}>
+          {this.state.loggedIn ? <div>Logged in</div> : <div>Logged out</div>}
+        </button>
+      </div>
+    );
+  }
+}
+
+class ApiCall extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+
+  render() {
+    return <div>Code goes here.</div>;
   }
 }
