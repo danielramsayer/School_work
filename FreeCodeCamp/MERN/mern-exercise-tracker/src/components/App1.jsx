@@ -23,7 +23,9 @@ class App1 extends React.Component {
         {/* <Checker /> */}
         {/* <Timer /> */}
         {/* <LogStatus /> */}
-        <ApiCall />
+        {/* <ApiCall /> */}
+        {/* <Forms /> */}
+        <FromArray />
       </div>
     );
   }
@@ -228,10 +230,100 @@ class LogStatus extends Component {
 class ApiCall extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      thing: {}
+    };
+  }
+
+  componentDidMount() {
+    fetch("https://reqres.in/api/products/3")
+      .then(response => response.json())
+      .then(data => {
+        console.log("CDM Data", data);
+        this.setState({ thing: data });
+        console.log("CDM Thing", this.state.thing);
+      });
   }
 
   render() {
-    return <div>Code goes here.</div>;
+    return (
+      <div>
+        {console.log("Render Thing", this.state.thing)}
+        {this.state.thing.data ? (
+          <div>{this.state.thing.data.color}</div>
+        ) : (
+          <div>Loading....</div>
+        )}
+        {console.log("Render Thing 2", this.state.thing)}
+      </div>
+    );
+  }
+}
+
+class Forms extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "Please write an essay about your favorite DOM element."
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert("An essay was submitted: " + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Essay:
+          <textarea value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+        <select>
+          <option value="grapefruit">Grapefruit</option>
+          <option value="lime">Lime</option>
+          <option selected value="coconut">
+            Coconut
+          </option>
+          <option value="mango">Mango</option>
+        </select>
+      </form>
+    );
+  }
+}
+
+class FromArray extends Component {
+  render() {
+    const arr = [
+      "string",
+      42,
+      function() {
+        return <>You found me!</>;
+      }
+    ];
+    const arr2 = {
+      firstn: "Jack",
+      secondn: "Smalls",
+      address: {
+        street: "Madison",
+        num: "123"
+      }
+    };
+    return (
+      <header>
+        <p>
+          Welcome, {arr[2]()}, {arr2.address.num}
+        </p>
+      </header>
+    );
   }
 }
