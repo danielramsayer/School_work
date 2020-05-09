@@ -334,7 +334,10 @@ class OnUpdate extends Component {
     super();
     this.state = {
       fName: "",
-      lName: ""
+      lName: "",
+      isRelevant: true,
+      gender: "",
+      favoriteColor: ""
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -345,22 +348,89 @@ class OnUpdate extends Component {
   }
   render() {
     return (
-      <form>
+      <form
+        onSubmit={
+          this.handleSubmit
+        } /* This ties in with possibly an external API*/
+      >
         <input
           type="text"
           name="fName"
-          placeholder="What's your name?"
+          value={this.state.fName}
+          placeholder="first name"
           onChange={this.handleChange}
         ></input>
+        <br />
         <input
           type="text"
           name="lName"
-          placeholder="What's your name?"
+          value={this.state.lName}
+          placeholder="last name"
           onChange={this.handleChange}
         ></input>
+        <br />
+        <textarea
+          value={"Please enter your thoughts."}
+          onChange={this.handleChange}
+        />
+        <br />
+        <input
+          type="checkbox"
+          name="isRelevant"
+          checked={this.state.isRelevant}
+          onChange={this.handleChange}
+        />{" "}
+        Relevant?
+        <br />
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={this.state.gender === "male"}
+            onChange={this.handleChange}
+          />
+          Male
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={this.state.gender === "female"}
+            onChange={this.handleChange}
+          />
+          Female
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="gender"
+            value="other"
+            checked={this.state.gender === "other"}
+            onChange={this.handleChange}
+          />
+          Other
+        </label>
+        <br />
+        <select
+          name="favoriteColor"
+          value={this.state.favoriteColor}
+          onChange={this.handleChange}
+        >
+          <option value="red">Red</option>
+          <option value="orange">Orange</option>
+          <option value="yellow">Yellow</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="purple">Purple</option>
+        </select>
+        <br />
         <div>
-          {this.state.fName} {this.state.lName}
+          {this.state.fName} {this.state.lName} {this.state.gender}{" "}
+          {this.state.favoriteColor}
         </div>
+        <button>Submit</button>
       </form>
     );
   }
