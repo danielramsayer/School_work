@@ -25,7 +25,8 @@ class App1 extends React.Component {
         {/* <LogStatus /> */}
         {/* <ApiCall /> */}
         {/* <Forms /> */}
-        <FromArray />
+        {/* <FromArray /> */}
+        <OnUpdate />
       </div>
     );
   }
@@ -324,6 +325,43 @@ class FromArray extends Component {
           Welcome, {arr[2]()}, {arr2.address.num}
         </p>
       </header>
+    );
+  }
+}
+
+class OnUpdate extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fName: "",
+      lName: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+  render() {
+    return (
+      <form>
+        <input
+          type="text"
+          name="fName"
+          placeholder="What's your name?"
+          onChange={this.handleChange}
+        ></input>
+        <input
+          type="text"
+          name="lName"
+          placeholder="What's your name?"
+          onChange={this.handleChange}
+        ></input>
+        <div>
+          {this.state.fName} {this.state.lName}
+        </div>
+      </form>
     );
   }
 }
