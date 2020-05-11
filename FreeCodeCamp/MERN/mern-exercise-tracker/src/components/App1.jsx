@@ -449,9 +449,9 @@ class TravelCheck extends Component {
       toLocation: "",
       diet: [],
       restrictions: [
-        { key: "0", value: "vegan", isChecked: false },
-        { key: "1", value: "vegetarian", isChecked: false },
-        { key: "2", value: "glutenFree", isChecked: false }
+        { key: "0", value: "Vegan ", isChecked: false },
+        { key: "1", value: "Vegetarian ", isChecked: false },
+        { key: "2", value: "Gluten Free ", isChecked: false }
       ]
     };
     this.handleChange = this.handleChange.bind(this);
@@ -482,7 +482,7 @@ class TravelCheck extends Component {
   render() {
     const CheckBox = props => {
       return (
-        <li>
+        <>
           <input
             type="checkbox"
             key={props.id}
@@ -492,7 +492,7 @@ class TravelCheck extends Component {
             value={props.value}
           />{" "}
           {props.value}
-        </li>
+        </>
       );
     };
     return (
@@ -574,47 +574,22 @@ class TravelCheck extends Component {
               />
             );
           })}
-          <p>
-            <label>
-              <input
-                type="checkbox"
-                name="vegan"
-                checked={this.state.vegan}
-                onChange={this.handleChange}
-              ></input>
-              Vegan?
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="vegetarian"
-                checked={this.state.vegetarian}
-                onChange={this.handleChange}
-              ></input>
-              Vegetarian?
-            </label>
-            <label>
-              <input
-                type="checkbox"
-                name="glutenFree"
-                checked={this.state.glutenFree}
-                onChange={this.handleChange}
-              ></input>
-              Gluten Free?
-            </label>
-          </p>
           <br />
+          <h3>Name: </h3>
           {this.state.fName} {this.state.lName}
           <br />
+          <h3>Gender:</h3>
           {this.state.gender} <br />
+          <h3>Age:</h3>
           {this.state.age}
           <br />
+          <h3>Destination:</h3>
           {this.state.toLocation}
           <br />
-          {this.state.diet}
-          {this.state.vegan ? "Vegan" : ""},{" "}
-          {this.state.vegetarian ? "Vegetarian" : ""},{" "}
-          {this.state.glutenFree ? "Gluten Free" : ""}
+          <h3>Dietary Restrictions:</h3>
+          {this.state.restrictions.map(restriction => {
+            return restriction.isChecked ? restriction.value : "";
+          })}
         </form>
       </div>
     );
