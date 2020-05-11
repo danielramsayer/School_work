@@ -26,7 +26,8 @@ class App1 extends React.Component {
         {/* <ApiCall /> */}
         {/* <Forms /> */}
         {/* <FromArray /> */}
-        <OnUpdate />
+        {/* <OnUpdate /> */}
+        <TravelCheck />
       </div>
     );
   }
@@ -342,9 +343,10 @@ class OnUpdate extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
+    const { name, value, type, checked } = event.target;
+    type === "checked"
+      ? this.setState({ [name]: checked })
+      : this.setState({ [name]: value });
   }
   render() {
     return (
@@ -432,6 +434,189 @@ class OnUpdate extends Component {
         </div>
         <button>Submit</button>
       </form>
+    );
+  }
+}
+
+class TravelCheck extends Component {
+  constructor() {
+    super();
+    this.state = {
+      fName: "",
+      lName: "",
+      age: "",
+      gender: "other",
+      toLocation: "",
+      diet: [],
+      restrictions: [
+        { key: "0", value: "vegan", isChecked: false },
+        { key: "1", value: "vegetarian", isChecked: false },
+        { key: "2", value: "glutenFree", isChecked: false }
+      ]
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  createAge = () => {
+    const ageTable = [];
+    for (let i = 0; i < 120; i++) {
+      ageTable.push(<option value={i}>{i}</option>);
+    }
+    return ageTable;
+  };
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleCheckChildElement = event => {
+    let restrictions = this.state.restrictions;
+    restrictions.forEach(restriction => {
+      if (restriction.value === event.target.value)
+        restriction.isChecked = event.target.checked;
+    });
+  };
+
+  render() {
+    const CheckBox = props => {
+      return (
+        <li>
+          <input
+            type="checkbox"
+            key={props.id}
+            onClick={props.handleCheckChieldElement}
+            onChange={this.handleChange}
+            checked={props.isChecked}
+            value={props.value}
+          />{" "}
+          {props.value}
+        </li>
+      );
+    };
+    return (
+      <div>
+        <form>
+          <input
+            type="text"
+            name="fName"
+            value={this.state.fName}
+            placeholder="first name"
+            onChange={this.handleChange}
+          ></input>
+          First Name
+          <br />
+          <input
+            type="text"
+            name="lName"
+            value={this.state.lName}
+            placeholder="last name"
+            onChange={this.handleChange}
+          ></input>
+          Last Name
+          <br />
+          <select
+            type="checkbox"
+            name="age"
+            checked={this.state.age}
+            onChange={this.handleChange}
+          >
+            {this.createAge()}
+          </select>
+          Age
+          <br />
+          Gender
+          <br />
+          <input
+            type="radio"
+            name="gender"
+            value="other"
+            checked={this.state.gender === "other"}
+            onChange={this.handleChange}
+          ></input>{" "}
+          Other{" "}
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            checked={this.state.gender === "female"}
+            onChange={this.handleChange}
+          ></input>{" "}
+          Female{" "}
+          <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked={this.state.gender === "male"}
+            onChange={this.handleChange}
+          ></input>{" "}
+          Male <br />
+          <select
+            name="toLocation"
+            value={this.state.toLocation}
+            onChange={this.handleChange}
+          >
+            <option value="">Please select destination</option>
+            <option value="burmuda">Burmuda</option>
+            <option value="bahama">Bahama</option>
+            <option value="cocamo">Cocamo</option>
+          </select>
+          Location
+          <br />
+          Food Restrictions?
+          <br />
+          {this.state.restrictions.map(restriction => {
+            return (
+              <CheckBox
+                handleCheckChieldElement={this.handleCheckChildElement}
+                {...restriction}
+              />
+            );
+          })}
+          <p>
+            <label>
+              <input
+                type="checkbox"
+                name="vegan"
+                checked={this.state.vegan}
+                onChange={this.handleChange}
+              ></input>
+              Vegan?
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="vegetarian"
+                checked={this.state.vegetarian}
+                onChange={this.handleChange}
+              ></input>
+              Vegetarian?
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="glutenFree"
+                checked={this.state.glutenFree}
+                onChange={this.handleChange}
+              ></input>
+              Gluten Free?
+            </label>
+          </p>
+          <br />
+          {this.state.fName} {this.state.lName}
+          <br />
+          {this.state.gender} <br />
+          {this.state.age}
+          <br />
+          {this.state.toLocation}
+          <br />
+          {this.state.diet}
+          {this.state.vegan ? "Vegan" : ""},{" "}
+          {this.state.vegetarian ? "Vegetarian" : ""},{" "}
+          {this.state.glutenFree ? "Gluten Free" : ""}
+        </form>
+      </div>
     );
   }
 }
