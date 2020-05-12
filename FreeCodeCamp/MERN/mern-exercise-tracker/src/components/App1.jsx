@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import ReactDom from "react-dom";
+import { Container, Row, Col } from "react-bootstrap";
 import "./checkAndRun.scss";
+import ReactDom from "react-dom";
 import CheckAndRun from "./checkAndRun";
 import Joke, { Joke1 } from "./jokes";
 import Joken from "./inherit.js";
@@ -27,7 +28,8 @@ class App1 extends React.Component {
         {/* <Forms /> */}
         {/* <FromArray /> */}
         {/* <OnUpdate /> */}
-        <TravelCheck />
+        {/* <TravelCheck /> */}
+        <Memu />
       </div>
     );
   }
@@ -590,6 +592,88 @@ class TravelCheck extends Component {
           {this.state.restrictions.map(restriction => {
             return restriction.isChecked ? restriction.value : "";
           })}
+        </form>
+      </div>
+    );
+  }
+}
+
+function MemuHeader() {
+  return (
+    <Container className="memuheader">
+      <Row>
+        <Col>
+          <img
+            src="http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png"
+            alt="Troll Face image"
+            width="200px"
+          />
+        </Col>
+        <Col xs={8}>
+          <h2>Meme Generator</h2>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
+
+class Memu extends Component {
+  constructor() {
+    super();
+    this.state = {
+      topText: "",
+      bottomText: "",
+      imageURL: "https://i.imgflip.com/1bij.jpg",
+      allMemeImages: [],
+      random: 0
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  componentDidMount() {
+    fetch("https://api.imgflip.com/get_memes")
+      .then(response => response.json())
+      .then(response => {
+        const { memes } = response.data;
+        this.setState({ allMemeImages: memes });
+        //this.setState({ random: memes.data.length });
+      });
+  }
+
+  render() {
+    return (
+      <div>
+        <MemuHeader />
+        <h1>MEME GENERATOR</h1>
+        <form>
+          <input
+            type="text"
+            name="topText"
+            value={this.state.topText}
+            placeholder="Top Text"
+            onChange={this.handleChange}
+          ></input>
+          <input
+            type="text"
+            name="bottomText"
+            value={this.state.bottomText}
+            placeholder="Bottom Text"
+            onChange={this.handleChange}
+          ></input>
+          <button>Generate Meme</button>
+          <br />
+          <div className="meme">
+            <img src={this.state.imageURL} alt="" />
+            <h2 className="top">{this.state.topText}</h2>
+            <h2 className="bottom">{this.state.bottomText}</h2>
+          </div>
+          {console.log("image?", this.state.allMemeImages)}
         </form>
       </div>
     );
