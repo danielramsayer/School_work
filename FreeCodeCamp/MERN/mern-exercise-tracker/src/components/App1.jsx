@@ -628,11 +628,20 @@ class Memu extends Component {
       random: 0
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClickMeme = this.handleClickMeme.bind(this);
   }
 
   handleChange(event) {
     this.setState({
       [event.target.name]: event.target.value
+    });
+  }
+
+  handleClickMeme(event) {
+    event.preventDefault();
+    const rando = Math.random() * 100;
+    this.setState({
+      random: Math.floor(rando)
     });
   }
 
@@ -642,7 +651,6 @@ class Memu extends Component {
       .then(response => {
         const { memes } = response.data;
         this.setState({ allMemeImages: memes });
-        //this.setState({ random: memes.data.length });
       });
   }
 
@@ -651,7 +659,8 @@ class Memu extends Component {
       <div>
         <MemuHeader />
         <h1>MEME GENERATOR</h1>
-        <form>
+        {this.state.random}
+        <form onSubmit={this.handleClickMeme}>
           <input
             type="text"
             name="topText"
@@ -666,14 +675,26 @@ class Memu extends Component {
             placeholder="Bottom Text"
             onChange={this.handleChange}
           ></input>
+
           <button>Generate Meme</button>
+
           <br />
           <div className="meme">
-            <img src={this.state.imageURL} alt="" />
+            <img
+              src={
+                this.state.allMemeImages[this.state.random]
+                  ? this.state.allMemeImages[this.state.random].url
+                  : this.state.imageURL
+              }
+              alt={
+                this.state.allMemeImages[this.state.random]
+                  ? this.state.allMemeImages[this.state.random].name
+                  : "Meme image"
+              }
+            />
             <h2 className="top">{this.state.topText}</h2>
             <h2 className="bottom">{this.state.bottomText}</h2>
           </div>
-          {console.log("image?", this.state.allMemeImages)}
         </form>
       </div>
     );
