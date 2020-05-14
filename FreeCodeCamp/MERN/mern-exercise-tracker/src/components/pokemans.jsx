@@ -54,7 +54,7 @@ function PokemonContainer() {
     variables: { first: 9 }
   });
   return (
-    <div className="container">
+    <div className="container1">
       {pokemons &&
         pokemons.map(pokemon => (
           <PokemonComponent key={pokemon.id} pokemon={pokemon} />

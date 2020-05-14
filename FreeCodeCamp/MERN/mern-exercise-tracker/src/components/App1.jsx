@@ -8,6 +8,7 @@ import Joken from "./inherit.js";
 import Products from "./products";
 import Checker from "./checker";
 import Pokemon from "./pokemans";
+import PaintPlayground from "./paint";
 
 class App1 extends React.Component {
   render() {
@@ -21,6 +22,7 @@ class App1 extends React.Component {
         {/* <Products /> */}
         {/* <LoggedIn /> */}
         {/* <Image /> */}
+        {/* <PaintPlayground /> */}
         {/* <Counter /> */}
         {/* <Checker /> */}
         {/* <Timer /> */}
