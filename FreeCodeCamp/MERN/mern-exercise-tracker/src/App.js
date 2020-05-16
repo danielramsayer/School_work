@@ -9,6 +9,10 @@ import CreateExercise from "./components/create-exercise.component";
 import CreateUser from "./components/create-user.component";
 import Goofy from "./components/goofy";
 
+/*To run: in backend -> nodemon server
+from mern-exercise-tracker npm start
+*/
+
 function App() {
   return (
     <Router>
