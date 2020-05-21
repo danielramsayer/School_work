@@ -2,6 +2,8 @@ import React from "react";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider, useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
+import { Container, Row, Col } from "react-bootstrap";
+import "./checkAndRun.scss";
 
 const GET_POKEMONS = gql`
   query pokemons($first: Int!) {
@@ -21,6 +23,32 @@ const GET_POKEMONS = gql`
   }
 `;
 
+function PokemonComponent({ pokemon }) {
+  return (
+    <div className="pokemon">
+      <div className="pokemon__name">
+        <p>{pokemon.name}</p>
+      </div>
+      <div className="pokemon__meta">
+        <span>{pokemon.maxHP}</span>
+        <span>{pokemon.maxCP}</span>
+      </div>
+      <div className="pokemon__image">
+        <img src={pokemon.image} alt={pokemon.name} />
+      </div>
+      <div className="pokemon__attacks">
+        {pokemon.attacks.special.map(attack => (
+          <span key={`${attack.name}-${attack.damage}`}>
+            <p>{attack.name}</p>
+            {attack.damage}hp
+            <p></p>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function PokemonContainer() {
   const { data: { pokemons = [] } = {} } = useQuery(GET_POKEMONS, {
     variables: { first: 9 }
@@ -28,7 +56,9 @@ function PokemonContainer() {
   return (
     <div className="container">
       {pokemons &&
-        pokemons.map(pokemon => <Pokemon key={pokemon.id} pokemon={pokemon} />)}
+        pokemons.map(pokemon => (
+          <PokemonComponent key={pokemon.id} pokemon={pokemon} />
+        ))}
     </div>
   );
 }
