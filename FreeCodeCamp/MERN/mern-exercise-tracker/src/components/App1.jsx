@@ -7,6 +7,7 @@ import Joke, { Joke1 } from "./jokes";
 import Joken from "./inherit.js";
 import Products from "./products";
 import Checker from "./checker";
+import Pokemon from "./pokemans";
 
 class App1 extends React.Component {
   render() {
@@ -29,7 +30,8 @@ class App1 extends React.Component {
         {/* <FromArray /> */}
         {/* <OnUpdate /> */}
         {/* <TravelCheck /> */}
-        <Memu />
+        {/* <Memu /> */}
+        <Pokemon />
       </div>
     );
   }
@@ -639,9 +641,10 @@ class Memu extends Component {
 
   handleClickMeme(event) {
     event.preventDefault();
-    const rando = Math.random() * 100;
+    const rando = Math.floor(Math.random() * this.state.allMemeImages.length);
+    const randomImageURL = this.state.allMemeImages[rando].url;
     this.setState({
-      random: Math.floor(rando)
+      imageURL: randomImageURL
     });
   }
 
@@ -681,11 +684,7 @@ class Memu extends Component {
           <br />
           <div className="meme">
             <img
-              src={
-                this.state.allMemeImages[this.state.random]
-                  ? this.state.allMemeImages[this.state.random].url
-                  : this.state.imageURL
-              }
+              src={this.state.imageURL}
               alt={
                 this.state.allMemeImages[this.state.random]
                   ? this.state.allMemeImages[this.state.random].name
