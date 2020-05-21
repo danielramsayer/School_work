@@ -51,7 +51,7 @@ function PokemonComponent({ pokemon }) {
 
 function PokemonContainer() {
   const { data: { pokemons = [] } = {} } = useQuery(GET_POKEMONS, {
-    variables: { first: 9 }
+    variables: { first: 25 }
   });
   return (
     <div className="container1">

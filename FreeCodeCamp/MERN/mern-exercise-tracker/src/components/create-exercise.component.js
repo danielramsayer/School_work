@@ -68,11 +68,17 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios
-      .post("http://localhost:5000/exercises/add", exercise)
-      .then(res => console.log(res.data));
-
-    window.location = "/";
+    axios.post("http://localhost:5000/exercises/add", exercise).then(res => {
+      if (res.data) {
+        console.log(res.data);
+        window.location = "/";
+      } else {
+        alert(
+          "There was an error with the information being sent to our database" +
+            res.status
+        );
+      }
+    });
   }
 
   render() {
