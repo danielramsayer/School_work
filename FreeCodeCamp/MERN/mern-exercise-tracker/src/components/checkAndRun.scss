@@ -1,3 +1,5 @@
+$primary-color: purple;
+
 .morning {
   color: blue;
 }
@@ -265,4 +267,8 @@ header > p {
   .container1 .pokemon__meta span {
     margin-bottom: 10px;
   }
+}
+
+.form-control {
+  color: $primary-color;
 }
