@@ -33,12 +33,95 @@ class App1 extends React.Component {
         {/* <OnUpdate /> */}
         {/* <TravelCheck /> */}
         {/* <Memu /> */}
-        <Pokemon />
+        {/* <Pokemon /> */}
+        {/* <Datety {...schedule} {...cycle} /> */}
+        <Datify />
       </div>
     );
   }
 }
 export default App1;
+
+function Successor(schedule, cycle) {
+  let frequency = schedule.frequency;
+  let anchor = schedule.anchor;
+  let cycleStart = cycle.startDate;
+  let cycleEnd = cycle.endDate;
+
+  let cycleStartDate = new Date(cycleStart);
+  let cycleStartCopy = new Date(
+    cycleStartDate.getFullYear(),
+    cycleStartDate.getMonth(),
+    cycleStartDate.getDate()
+  );
+
+  let anchorDate = new Date(anchor);
+  let anchorDay = anchorDate.getDate();
+  let cycleEndDate = new Date(cycleEnd);
+  let cycleEndDateCopy = new Date(
+    cycleEndDate.getFullYear(),
+    cycleEndDate.getMonth(),
+    cycleEndDate.getDate()
+  );
+  let sStart = new Date(
+    cycleEndDateCopy.setDate(cycleEndDateCopy.getDate() + 1)
+  );
+  let sStartCopy = new Date(
+    sStart.getFullYear(),
+    sStart.getMonth(),
+    sStart.getDate()
+  );
+  let pEnd = new Date(cycleStartCopy.setDate(cycleStartCopy.getDate() - 1));
+  let pStart = new Date(pEnd.getFullYear(), sStart.getMonth(), -14);
+  let monthDay = sStart.getDate();
+  let endOfCycle26 = new Date(sStartCopy.setDate(sStartCopy.getDate() + 13));
+
+  //This date creation relies on the last parameter exploiting 0 to create the last day of the month.
+  let endOfMonth = new Date(
+    cycleEndDate.getFullYear(),
+    cycleEndDate.getMonth() + 1,
+    0
+  );
+
+  function endOfCycle24() {
+    if (monthDay === 1) {
+      return new Date(sStart.getFullYear(), sStart.getMonth(), anchorDay - 1);
+    } else {
+      return endOfMonth;
+    }
+  }
+
+  if (frequency == 12) {
+    return { start: sStart, end: endOfMonth };
+  } else if (frequency == 24) {
+    return { start: sStart, end: endOfCycle24() };
+  } else if (frequency == 26) {
+    console.log(sStart, endOfCycle26);
+    return { start: sStart, end: endOfCycle26 };
+  } else {
+    throw "Frequency is not a known freqency";
+  }
+}
+
+class Datify extends Component {
+  constructor() {
+    super();
+  }
+  render() {
+    let schedule = { frequency: 26, anchor: "1/1/2020" };
+    let cycle = {
+      startDate: "11/1/2019",
+      endDate: "11/6/2019"
+    };
+    const successor = Successor(schedule, cycle);
+    return (
+      <div>
+        <ul>{successor.start.toString()}</ul>
+        <ul>{successor.end.toString()}</ul>
+      </div>
+    );
+  }
+}
 
 class Header extends React.Component {
   render() {
