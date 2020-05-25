@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import axios from "axios";
+import "./checkAndRun.scss";
 export default class CreateExercise extends Component {
   constructor(props) {
     super(props);
@@ -68,17 +69,17 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post("http://localhost:5000/exercises/add", exercise).then(res => {
-      if (res.data) {
-        console.log(res.data);
-        window.location = "/";
-      } else {
-        alert(
-          "There was an error with the information being sent to our database" +
-            res.status
-        );
-      }
-    });
+    axios
+      .post("http://localhost:5000/exercises/add", exercise)
+      .then(res => {
+        if (res.data) {
+          console.log(res.data);
+          window.location = "/";
+        }
+      })
+      .catch(err => {
+        alert("Something has gone wrong, error message: " + err);
+      });
   }
 
   render() {
