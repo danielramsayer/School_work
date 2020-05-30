@@ -1,0 +1,9 @@
+header {
+  background-color: gray;
+  color: rgb(240, 253, 255);
+  text-align: center;
+  padding: 10px;
+}
+header a {
+  text-decoration: none;
+}
