@@ -501,8 +501,8 @@ function PersistantMultiply(a, b) {
 
 console.log(reliableMultiply(8, 8));
 // → 64
-console.log(reliableMultiply(9, 9));
-// → 81
+console.log(reliableMultiply(21, 37));
+// → 777
 
 //Locked Box
 const box = {
@@ -547,6 +547,26 @@ console.log(box.locked);
 // → true
 
 //ESJ Chapter 9
+//Or Daniel and how I learned to hate RegEx
+
+//                 /abc/ A sequence of characters
+//                 /[abc]/ Any character from a set of characters
+//                 /[^abc]/ Any character not in a set of characters
+//                 /[0-9]/ Any character in a range of characters
+//                 /x+/ One or more occurrences of the pattern x
+//                 /x+?/ One or more occurrences, nongreedy
+//                 /x*/ Zero or more occurrences
+//                 /x?/ Zero or one occurrence
+//                 /x{2,4}/ Two to four occurrences
+//                 /(abc)/ A group
+//                 /(a|b|c)/ Any one of several patterns
+//                 /\d/ Any digit character
+//                 /\w/ An alphanumeric character (“word character”)
+//                 /\s/ Any whitespace character
+//                 /./ Any character except newlines
+//                 /\b/ A word boundary
+//                 /^/ Start of input
+//                 /$/ End of input
 
 //Regex Golf
 //car and cat
@@ -593,4 +613,36 @@ function verify(regexp, yes, no) {
     if (regexp.test(str)) {
       console.log(`Unexpected match for '${str}'`);
     }
+}
+
+//Quoting style
+let text = "'I'm the cook,' he said, 'it's my job.'";
+// Change this call.
+console.log(text.replace(/(^|\W)'|'(\W|$)/g, '$1"$2'));
+// → "I'm the cook," he said, "it's my job."
+
+//Numbers Again
+// Fill in this regular expression.
+let number = /^[+-]?(\d|\.\d|\d+\.\d*)([e][+-]?)?\d*$/i;
+
+// Tests:
+for (let str of [
+  "1",
+  "-1",
+  "+15",
+  "1.55",
+  ".5",
+  "5.",
+  "1.3e2",
+  "1E-4",
+  "1e+12"
+]) {
+  if (!number.test(str)) {
+    console.log(`Failed to match '${str}'`);
+  }
+}
+for (let str of ["1a", "+-1", "1.2.3", "1+1", "1e4.5", ".5.", "1f5", "."]) {
+  if (number.test(str)) {
+    console.log(`Incorrectly accepted '${str}'`);
+  }
 }
