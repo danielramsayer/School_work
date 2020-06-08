@@ -35,7 +35,7 @@ class App1 extends React.Component {
         {/* <Memu /> */}
         {/* <Pokemon /> */}
         {/* <Datety {...schedule} {...cycle} /> */}
-        <Datify />
+        {/* <Datify /> */}
       </div>
     );
   }
