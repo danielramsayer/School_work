@@ -1,0 +1,23 @@
+Lecture One: HTML, CSS and SCSS
+    We went over the basic HTML format of websites. We went over the most common HTML features: html, head, title, body, h-1 thru h-6, p, br, a, img, style="property:value;", <!-- -->, em, b, br.
+    CSS is the style component and Sass is a superset of CSS with programming elements added to the language to allow for greater diversity of action. It requires compilation to be functional uses. 
+
+Lecture Two: Git
+    We went over the basics of Git. How to sign into Github, link the local to the remote. We then talked about the commands available and what they do. We then went over the use cases of how multiple individuals would work on the same project together. 
+    Commands can be found here: https://www.atlassian.com/git/glossary#commands
+    Worked through a few different scenarios for working situations.
+    Discussed some features of Github including pages. 
+
+Lecture Three: Python
+
+Lecture Four: Django
+
+Lecture Five: SQL, Models, and Migrations
+
+Lecture Six: Javascript
+
+Lecture Seven: User Interfaces
+
+Lecture Eight: Testing, CI/CD
+
+Lecture Nine: Scalability and Security

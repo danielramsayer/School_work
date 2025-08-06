@@ -1,4 +1,4 @@
-class QuickFind(object):
+"""class QuickFind(object):
 
   def quickfind ():"""
 
