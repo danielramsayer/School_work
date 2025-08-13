@@ -9,6 +9,7 @@ Lecture Two: Git
     Discussed some features of Github including pages. 
 
 Lecture Three: Python
+    
 
 Lecture Four: Django
 
