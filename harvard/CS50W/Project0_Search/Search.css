@@ -1,0 +1,70 @@
+.topnav {
+    text-align: right;
+}
+
+button {
+    border-radius: 12px;
+    background-color: #4285F4;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.header {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    
+    h1 {
+        color: transparent; /* Make the text transparent to reveal the background */
+        background: linear-gradient(to left, red,red, red, orange, yellow, green, blue, indigo, violet, violet, violet);
+        -webkit-background-clip: text; /* For WebKit browsers */
+        background-clip: text;
+        font-size: 72px;
+    }
+}
+
+.searchbox {
+    text-align: center;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    display: inline-block;
+    border-radius: 12px;
+    padding: 5px;
+    border: 2px solid #ccc;
+    width: 50vw;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+td {
+    text-align: left;
+    vertical-align: baseline;
+}
+
+.code {
+    font-family: "Lucida Console";
+}

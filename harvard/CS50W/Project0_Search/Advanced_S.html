@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="Search.css">
+    </head>
+    <body>
+        <div class="topnav">
+            <button><a href="index.html">Search</a></button>
+            <button><a href="Images_S.html">Images</a></button>
+        </div>
+        <div class="header">
+            <h1>Schoogle</h1>
+        </div>
+        <div class="searchbox">
+            <form action="https://www.google.com/search">
+                <table class="advanced">
+                    <tr>
+                        <td><h3>Find pages with...</h3></td>
+                        <td></td>
+                        <td><h3>To do this in the search box</h3></td>
+                    </tr>
+                    <tr>
+                        <td>All of these words:</td>
+                        <td><input type="text" name="as_q"></td>
+                        <td>Type the important words:  <div class="code">tricolor rat terrier</div></td>
+                    </tr>
+                    <tr>
+                        <td>This exact word or phrase: </td>
+                        <td><input type="text" name="as_epq"></td>
+                        <td>Put exact words in quotes:  <div class="code">"rat terrier"</div></td>
+                    </tr>
+                    <tr>
+                        <td>Any of these words:</td>
+                        <td><input type="text" name="as_oq"></td>
+                        <td>Type OR between all the words you want: <div class="code">miniature OR standard</div></td>
+                    </tr>
+                    <tr>
+                        <td>None of these words:</td>
+                        <td><input type="text" name="as_eq"></td>
+                        <td>Put a minus sign just before words you don't want: <div class="code">-rodent, -"Jack Russell"</div></td>
+                    </tr>
+                </table>
+
+                <div>
+                    <input type="submit" value="Google Search">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
