@@ -11,6 +11,3 @@ def index(request):
 
 def greet(request, path):
     return HttpResponse(f"Hello, {path.capitalize()}. You're at the encyclopedia index.")
-
-def testy(request):
-    return render(request, "testing.html")
