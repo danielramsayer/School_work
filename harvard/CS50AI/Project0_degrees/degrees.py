@@ -90,8 +90,16 @@ def shortest_path(source, target):
     that connect the source to the target.
 
     If no possible path, returns None.
-    """
 
+    else:
+        return None
+
+    Take in Initial and Target,
+    
+    """
+    print(f"Finding shortest path from {source} to {target}...")
+    test = neighbors_for_person(source)
+    print(test)
     # TODO
     raise NotImplementedError
 
